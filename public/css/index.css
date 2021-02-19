@@ -1,0 +1,45 @@
+.bg_img{
+    background-image: url(./pics/sd2.webp);
+    background-color: rgba(255,255,255, 0.5); /* Make the bg pic more transparent; texts more obvious */
+    background-blend-mode: lighten;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg_img p {
+    font-size: 35px;
+    font-family: monospace;
+    text-align: center;
+    text-shadow: 2px 2px  #2dc032;
+}
+
+.btn button{
+    text-align: center;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-size-adjust: auto;
+    width: 45%;
+    height: 75px;
+    display: block;
+    color: white; 
+    background-color: #3caa40;
+    border: 2px solid rgb(13, 97, 13); /* Green border */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 10px;
+    margin-left: auto; /* center all buttons */
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/* Prevent double borders */
+/* .btn button:not(:last-child) {
+    border-bottom: none; 
+} */
+
+.btn button:hover{
+    background-color: lightgreen;
+}

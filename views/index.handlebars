@@ -1,8 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Test Page</title>
+	<title>Main Navigation Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    {{!-- My CSS  --}}
+	<link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-Begin here (or replace this with any static code already written).
+	<div class="bg_img">
+		<p>Welcome to U$spend!</p>
+		<p style="font-size: 18px;"> Track your everyday spending and win gifts! <p>
+		<div class="btn">
+			<button id="overview" onclick="location.href='./overview'">Overview</button>
+			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>
+			<button id="Budget" onclick="location.href='./budget'">Budget</button>
+			<button id="History" onclick="location.href='./history'">History</button>
+		</div>
+	</div>
+	
 </body>
+
 </html>

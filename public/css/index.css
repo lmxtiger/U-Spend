@@ -43,3 +43,16 @@
 .btn button:hover{
     background-color: lightgreen;
 }
+
+.pet {
+    background-image: url("./pics/pet.jpeg");
+    background-repeat: no-repeat;
+    display: block;
+    background-size: 380px;
+    width: 380px;
+    height: 300px;
+    margin: 0 auto;
+    text-indent: -9999999px;
+    position: relative;
+    /* left: 750px; */
+}

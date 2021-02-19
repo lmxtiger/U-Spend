@@ -12,7 +12,7 @@
     {{!-- My CSS  --}}
 	<link href="css/addNewEntry.css" rel="stylesheet">
     <style>
-     
+    
     </style>
 
     {{!-- JS support for giving star rating --}}
@@ -22,8 +22,20 @@
 
 <body>
     {{!-- back to main page index.handlebars arrow  --}}
-    <img src="css/pics/back-arrow.png" onclick="location.href='./'" id="back-arrow" alt="back (to main page) arrow" height="30px" width="30px">
-    <p id="title">New Expense</p>
+    <div class="parent">
+        <div class="left">
+            <img src="css/pics/back-arrow.png" onclick="location.href='./'" id="back-arrow" alt="back (to main page) arrow" height="30px" width="30px">
+        </div>
+        <p class="center">New Expense</p>
+        <div class="right"></div>
+    </div>
+    {{!-- <div id="backBtn_title">
+        <div id="left_img">
+            <img src="css/pics/back-arrow.png" onclick="location.href='./'" id="back-arrow" alt="back (to main page) arrow" height="30px" width="30px">
+        </div>
+        <p id="title">New Expense</p>
+        <div id="right_ph"></div>
+    </div> --}}
     <main>
         {{!-- Name of Spending--}}
         <label for="name">Name</label> <br>

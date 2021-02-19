@@ -40,28 +40,23 @@ main label{
     border: 2px solid blue;
   } */
 
-div#backBtn_title {
+/* div#backBtn_title {
     display: flex;
     justify-content: center;
-}
+} */
 
-#left_img #right_ph {
-    flex: 1;
-}
-
-#back-arrow{
-    margin: 10px;
-    margin-right: auto;
+.left img{
+    margin: 10px auto auto 10px; /* top, right, bottom, left */
     position: absolute;
 }
 
 p.center {
+    width: fit-content;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 2%;
     margin-top: 10px;
-    width: fit-content;
 }
 
 /* main select {

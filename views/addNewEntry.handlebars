@@ -21,21 +21,15 @@
 </head>
 
 <body>
-    {{!-- back to main page index.handlebars arrow  --}}
     <div class="parent">
         <div class="left">
-            <img src="css/pics/back-arrow.png" onclick="location.href='./'" id="back-arrow" alt="back (to main page) arrow" height="30px" width="30px">
+            {{!-- back to main page index.handlebars arrow  --}}
+            <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
         </div>
         <p class="center">New Expense</p>
         <div class="right"></div>
     </div>
-    {{!-- <div id="backBtn_title">
-        <div id="left_img">
-            <img src="css/pics/back-arrow.png" onclick="location.href='./'" id="back-arrow" alt="back (to main page) arrow" height="30px" width="30px">
-        </div>
-        <p id="title">New Expense</p>
-        <div id="right_ph"></div>
-    </div> --}}
+    
     <main>
         {{!-- Name of Spending--}}
         <label for="name">Name</label> <br>

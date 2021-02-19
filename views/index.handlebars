@@ -16,7 +16,14 @@
 		<p>Welcome to U$spend!</p>
 		<p style="font-size: 18px;"> Track your everyday spending and win gifts! <p>
 		<p style="font-size: 20px;"> "Foxy Doggy"<p>
-  		<div class="pet"><p>Your pet</p ></div>
+		<div class="container">
+			<img src="css/pics/pet.jpeg" id="pet_img" alt="Pet Image" width="400px" height="300px" style="display: block;">
+			<div class="overlay">
+    			<div class="text">Feed me!</div>
+ 			</div>
+		</div>
+		
+  		{{!-- <div class="pet"><p>Your pet</p ></div> --}}
 		<div class="btn">
 			<button id="overview" onclick="location.href='./overview'">Overview</button>
 			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>

@@ -4,7 +4,10 @@
 <head>
 	<title>Main Navigation Page</title>
 	<meta charset="utf-8">
+	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
     {{!-- My CSS  --}}
@@ -12,12 +15,12 @@
 </head>
 
 <body>
-	<div class="bg_img">
+	<div class="bg_img" style="overflow: scroll;">
 		<p>Welcome to U$spend!</p>
 		<p style="font-size: 18px;"> Track your everyday spending and win gifts! <p>
-		<p style="font-size: 20px;"> "Foxy Doggy"<p>
-		<div class="container">
-			<img src="css/pics/pet.jpeg" id="pet_img" alt="Pet Image" width="400px" height="300px" style="display: block;">
+		<p style="font-size: 20px; margin-bottom: 20px;"> "Foxy Doggy"<p>
+		<div class="container_img">
+			<img src="css/pics/pet.jpeg" id="pet_img" alt="Pet Image" width="100%" height="250px" style="display: block;">
 			<div class="overlay">
     			<div class="text">Feed me!</div>
  			</div>

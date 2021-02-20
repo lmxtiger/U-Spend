@@ -21,22 +21,22 @@
 </head>
 
 <body>
-    <div class="parent">
-        <div class="left">
-            {{!-- back to main page index.handlebars arrow  --}}
-            <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
+    <div class="container top_info" style="max-width: 900px;">
+        <div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
+            </div>
+            <p class="center">New Expense</p>
+            <div class="right"></div>
         </div>
-        <p class="center">New Expense</p>
-        <div class="right"></div>
-    </div>
-    
-    <main>
+
         {{!-- Name of Spending--}}
-        <label for="name">Name</label> <br>
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="pizza,T-shirt,laptop,..." required autofocus> 
 
         {{!-- Drop-down list of current categories --}}
-        <label for="categories">Category</label> <br>
+        <label for="categories">Category</label>
         {{!-- <input list="categories" id="category" name="category" placeholder="New Category?"> --}}
         <select id="categories" name="category">
             <option value="Food/Drink">Food/Drink</option>
@@ -53,71 +53,74 @@
         </select> --}}
 
         {{!-- Amount --}}
-        <label for="amount">Amount</label> <br>
+        <label for="amount">Amount</label>
         <input type="number" step="any" id="amount" name="amount" placeholder="e.g., $5.06; up to 20k" min="0" max="20000" required> <br>
 
-        <label for="rating">Rating</label> <br>
-    </main>
+        {{!-- Rating  --}}
+        <label for="rating">Rating</label>
+    </div>
 
-    {{!-- Rating --}}
-    <form id="rating"
-        method="post"
-        action-xhr="https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/set"
-        target="_blank">
-        <fieldset class="rating">
-            <input name="rating"
-            type="radio"
-            id="rating5"
-            value="5"
-            on="change:rating.submit">
-            <label for="rating5" title="5 stars">☆</label>
+    <div class="container" style="max-width: 900px;">
+        <form id="rating"
+            method="post"
+            action-xhr="https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/set"
+            target="_blank">
+            <fieldset class="rating">
+                <input name="rating"
+                type="radio"
+                id="rating5"
+                value="5"
+                on="change:rating.submit">
+                <label for="rating5" title="5 stars">☆</label>
 
-            <input name="rating"
-            type="radio"
-            id="rating4"
-            value="4"
-            on="change:rating.submit">
-            <label for="rating4" title="4 stars">☆</label>
+                <input name="rating"
+                type="radio"
+                id="rating4"
+                value="4"
+                on="change:rating.submit">
+                <label for="rating4" title="4 stars">☆</label>
 
-            <input name="rating"
-            type="radio"
-            id="rating3"
-            value="3"
-            on="change:rating.submit">
-            <label for="rating3" title="3 stars">☆</label>
+                <input name="rating"
+                type="radio"
+                id="rating3"
+                value="3"
+                on="change:rating.submit">
+                <label for="rating3" title="3 stars">☆</label>
 
-            <input name="rating"
-            type="radio"
-            id="rating2"
-            value="2"
-            on="change:rating.submit"
-            checked="checked">
-            <label for="rating2" title="2 stars">☆</label>
+                <input name="rating"
+                type="radio"
+                id="rating2"
+                value="2"
+                on="change:rating.submit"
+                checked="checked">
+                <label for="rating2" title="2 stars">☆</label>
 
-            <input name="rating"
-            type="radio"
-            id="rating1"
-            value="1"
-            on="change:rating.submit">
-            <label for="rating1" title="1 stars">☆</label>
-        </fieldset>
-        <div submit-success>
-            <template type="amp-mustache">
-            <p>Thanks for rating {{rating}} star(s)!</p>
-            </template>
-        </div>
-        <div submit-error>
-            <template type="amp-mustache">
-                Looks like something went wrong. Please try to rate again. {{error}}
-            </template>
-        </div>
-    </form>
-    <br>
+                <input name="rating"
+                type="radio"
+                id="rating1"
+                value="1"
+                on="change:rating.submit">
+                <label for="rating1" title="1 stars">☆</label>
+            </fieldset>
+            <div submit-success>
+                <template type="amp-mustache">
+                <p>Thanks for rating {{rating}} star(s)!</p>
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    Looks like something went wrong. Please try to rate again. {{error}}
+                </template>
+            </div>
+        </form>
+        <br>
 
-    {{!-- "submit" button  --}}
-    <input type="submit" value="Add" class="addNewEntryBtn" style="margin-left: 30%; margin-right: 24%;">
-    {{!-- Cancel button  --}}
-    <button class="addNewEntryBtn">Cancel</button>
+        {{!-- "submit" button  --}}
+        <input type="submit" value="Add" class="addNewEntryBtn" style="float: left;">
+        {{!-- Cancel button  --}}
+        <button class="addNewEntryBtn" style="float: right;">Cancel</button>
+    </div>
+
 </body>
 
 </html>

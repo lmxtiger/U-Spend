@@ -1,10 +1,11 @@
 .bg_img{
     background-image: url(./pics/sd2.webp);
+    background-repeat: repeat-y;
     background-color: rgba(255,255,255, 0.5); /* Make the bg pic more transparent; texts more obvious */
     background-blend-mode: lighten;
     position: absolute;
-    width: 99%;
-    height: 99%;
+    width: 100%;
+    height: 100%;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
@@ -17,22 +18,30 @@
     text-shadow: 2px 2px  #2dc032;
 }
 
+.btn{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto; /* center all buttons */
+    margin-right: auto;
+    display: block;
+    max-width: 900px;
+}
+
 .btn button{
     text-align: center;
     font-size: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-size-adjust: auto;
-    width: 45%;
-    height: 75px;
-    display: block;
     color: white; 
     background-color: #3caa40;
     border: 2px solid rgb(13, 97, 13); /* Green border */
-    cursor: pointer; /* Pointer/hand icon */
     border-radius: 10px;
-    margin-left: auto; /* center all buttons */
-    margin-right: auto;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%;
+    height: 75px;
     margin-bottom: 30px;
+    display: block;
 }
 
 /* Prevent double borders */
@@ -56,26 +65,27 @@
     position: relative;
 } */
 
-.container{
-    width:fit-content;
-    height: 300px;;
+.container_img{
+    width: 80%;
+    max-width: 400px;
+    height: 250px;
     display: block;
-    margin: 0px auto 60px; /* top, left/right, bottom */
+    margin: 0px auto 50px; /* top, left/right, bottom */
 }
 
-img#pet_img {
+img#pet_img, div.overlay {
     display: block;
-    margin: 0 auto;
+    margin: 0px auto 0px;
 }
 
 .overlay {
     position: relative;
-    top: -300px;
-    bottom: -300px;
+    top: -250px;
+    bottom: -250px;
     left: 0;
     right: 0;
-    height: 300px;
-    width: 400px;
+    height: 250px;
+    width: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color:  #3caa40;
@@ -94,6 +104,6 @@ img#pet_img {
     text-align: center;
 }
 
-.container:hover .overlay {
-    opacity: 0.75;
+.container_img:hover .overlay {
+    opacity: 0.75 !important;
 }

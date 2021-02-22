@@ -11,10 +11,12 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
     {{!-- My CSS  --}}
 	<link href="css/addNewEntry.css" rel="stylesheet">
-    <style>
-    
-    </style>
 
+    {{!-- enable JQuery --}}
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/addNewEntry_anim.js"></script>
+   
     {{!-- JS support for giving star rating --}}
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
@@ -39,22 +41,20 @@
         <label for="categories">Category</label>
         {{!-- <input list="categories" id="category" name="category" placeholder="New Category?"> --}}
         <select id="categories" name="category">
-            <option value="Food/Drink">Food/Drink</option>
-            <option value="Clothings">Clothings</option>
-            <option value="Fitness">Fitness</option>
-            <option value="Study">Study</option>
-            <option value="Electronics">Electronics</option>
+            <option value="0">Select Category:</option>
+            <option value="1">Food/Drink</option>
+            <option value="2">Clothings</option>
+            <option value="3">Fitness</option>
+            <option value="4">Study</option>
+            <option value="5">Electronics</option>
+            <option value="-1">+ New Category</option>
         </select>
-        {{!-- <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select> --}}
 
         {{!-- Amount --}}
         <label for="amount">Amount</label>
-        <input type="number" step="any" id="amount" name="amount" placeholder="e.g., $5.06; up to 20k" min="0" max="20000" required> <br>
+        <div class="dollar">
+            <input type="number" step="any" id="amount" name="amount" placeholder="e.g., $5.06; up to 20k" min="0" max="20000" required>
+        </div>
 
         {{!-- Rating  --}}
         <label for="rating">Rating</label>
@@ -65,6 +65,7 @@
             method="post"
             action-xhr="https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/set"
             target="_blank">
+            {{!-- checked="checked" --}}
             <fieldset class="rating">
                 <input name="rating"
                 type="radio"
@@ -91,8 +92,7 @@
                 type="radio"
                 id="rating2"
                 value="2"
-                on="change:rating.submit"
-                checked="checked">
+                on="change:rating.submit">
                 <label for="rating2" title="2 stars">☆</label>
 
                 <input name="rating"
@@ -118,7 +118,14 @@
         {{!-- "submit" button  --}}
         <input type="submit" value="Add" class="addNewEntryBtn" style="float: left;">
         {{!-- Cancel button  --}}
-        <button class="addNewEntryBtn" style="float: right;">Cancel</button>
+        <button class="addNewEntryBtn" style="float: right;" onclick="resetAll()">Reset</button>
+        <script>
+            function resetAll() {
+                location.reload(); 
+                {{!-- console.log("Reset!"); --}}
+                {{!-- alert("reset!"); --}}
+            }
+        </script>
     </div>
 
 </body>

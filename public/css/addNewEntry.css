@@ -8,6 +8,21 @@
     border-radius: 10px;
 }
 
+.dollar{
+	/* display:inline-block; */
+	position: relative;
+	}
+.dollar input{
+	padding-left: 20px;
+	}
+.dollar:focus-within::before{
+  position: absolute;
+  content: "$";
+  font-size: 25px;
+  left: 5px;
+	top: 12.5px;
+ 	}
+
 /* main label{
     font-size: 25px;
     margin: 0 auto;

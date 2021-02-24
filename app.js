@@ -10,8 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var addNewEntry = require('./routes/addNewEntry');
-var overview = require('./routes/overview');
-var history = require('./routes/history');
+var overHist = require('./routes/overHist');
 var budget = require('./routes/budget');
 // Example route
 // var user = require('./routes/user');
@@ -39,10 +38,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/addNewEntry', addNewEntry.view)
-app.get('/overview', overview.view)
-app.get('/history', history.view)
-app.get('/budget', budget.view)
+app.get('/addNewEntry', addNewEntry.addNewEntry);
+app.get('/overHist', overHist.view);
+app.get('/budget', budget.view);
 // Example route
 // app.get('/users', user.list);
 

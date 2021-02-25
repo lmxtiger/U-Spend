@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Main Navigation Page</title>
+	<meta charset="utf-8">
+	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	{{!-- My CSS  --}}
+	<link href="css/overHist.css" rel="stylesheet" type="text/css">
+
+	{{!-- enable JQuery --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container all-cates">
+        {{#each categories}}
+        <div class="each-cate" onclick="location.href='./cate' ">
+            <div>{{this}}</div>
+            <img src="css/pics/right-arrow.png" alt="go to each category arrow">
+        </div>
+        {{/each}}
+    </div>
+
+    <script>
+      
+    </script>
+
+</body>
+
+</html>

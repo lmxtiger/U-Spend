@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Main Navigation Page</title>
+	<meta charset="utf-8">
+	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	{{!-- My CSS  --}}
+	<link href="css/cate.css" rel="stylesheet" type="text/css">
+    <style>
+        .all-items{
+            overflow: scroll;
+            margin-top: 20px;
+        }
+        .each-item{
+            display: block;
+            border: 2px solid rgb(13, 97, 13);
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+
+	{{!-- enable JQuery --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="css/pics/back-arrow.png" onclick="location.href='./overHist'" alt="back to overview arrow" height="30px" width="30px">
+            </div>
+            <p class="center">Category</p>
+            <div class="right"></div>
+        </div>
+
+        <div class="all-items">
+            {{#each Dining}}
+            <div class="each-item">
+                <div>{{name}}</div>
+                <div>{{amount}}</div>
+                <div>{{date}}</div>
+            </div>
+            {{/each}}
+        </div>
+        
+    </div>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

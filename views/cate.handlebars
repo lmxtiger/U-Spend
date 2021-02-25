@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-	<title>Main Navigation Page</title>
+	<title>Each Category Page</title>
 	<meta charset="utf-8">
 	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    {{!-- MUST include the precursory slash (only for this file)! --}}
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	{{!-- My CSS  --}}
-	<link href="css/cate.css" rel="stylesheet" type="text/css">
+	<link href="/css/cate.css" rel="stylesheet" type="text/css">
     <style>
         .all-items{
             overflow: scroll;
@@ -35,26 +36,24 @@
         <div class="parent">
             <div class="left">
                 {{!-- back to main page index.handlebars arrow  --}}
-                <img src="css/pics/back-arrow.png" onclick="location.href='./overHist'" alt="back to overview arrow" height="30px" width="30px">
+                <img src="/css/pics/back-arrow.png" onclick="location.href='../overHist'" alt="back to overview arrow" height="30px" width="30px">
             </div>
-            <p class="center">Category</p>
+            <p class="center">{{cateName}}</p>
             <div class="right"></div>
         </div>
 
         <div class="all-items">
-            {{#each Dining}}
-            <div class="each-item">
-                <div>{{name}}</div>
-                <div>{{amount}}</div>
-                <div>{{date}}</div>
-            </div>
+            {{#each exp_list}}
+                <div class="each-item" style="padding-left: 10px;">
+                    <div>{{name}}</div>
+                    <div>${{amount}}</div>
+                    <div>{{date}}</div>
+                </div>
             {{/each}}
         </div>
         
     </div>
-    <script>
 
-    </script>
 
 </body>
 

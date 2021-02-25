@@ -51,7 +51,7 @@
             }
         ],
 
-        "study": [
+        "Study": [
             {
             "name": "The Prince eBook",
             "amount": 15,
@@ -73,7 +73,7 @@
     },
 
     "categories": [
-        "Food/Drink",
+        "Dining",
         "Clothings",
         "Fitness",
         "Study",

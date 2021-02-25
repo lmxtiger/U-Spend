@@ -8,7 +8,7 @@
   }
   
   /* Styles for demonstration */
-  .parent {
+  /* .parent {
     padding: 5px;
     border: 2px solid #000;
   }
@@ -16,9 +16,23 @@
   .right {
     padding: 3px;
     border: 2px solid red;
-  }
-  .center {
+  } */
+  /* .center {
     margin: 0 3px;
     padding: 3px;
     border: 2px solid blue;
-  }
+  } */
+
+.left img{
+    margin: 18px auto auto 0px; /* top, right, bottom, left */
+    position: absolute;
+}
+
+p.center {
+    width: fit-content;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 4%;
+    margin-top: 15px;
+}

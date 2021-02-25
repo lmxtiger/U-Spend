@@ -11,10 +11,10 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 var addNewEntry = require('./routes/addNewEntry');
 var overHist = require('./routes/overHist');
+var cate = require('./routes/cate');
 var budget = require('./routes/budget');
 var profile = require('./routes/profile');
 var help = require('./routes/help');
-var cate = require('./routes/cate');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,7 +46,7 @@ app.get('/overHist', overHist.view);
 app.get('/budget', budget.view);
 app.get('/profile', profile.view);
 app.get('/help', help.view);
-app.get('/cate', cate.viewEachCate);
+app.get('/cate/:cateName', cate.viewEachCate);
 // Example route
 // app.get('/users', user.list);
 

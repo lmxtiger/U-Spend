@@ -12,6 +12,7 @@ var handlebars = require('express3-handlebars')
 // handlebars.registerHelper('repeat', repeat);
 
 var index = require('./routes/index');
+var login = require('./routes/login');
 var addNewEntry = require('./routes/addNewEntry');
 var overHist = require('./routes/overHist');
 var cate = require('./routes/cate');
@@ -44,6 +45,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/login', login.view);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
 app.get('/budget', budget.view);

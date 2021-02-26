@@ -53,7 +53,7 @@
   
 
 .bg_img{
-    background-image: url(./pics/sd2.webp);
+    background-image: url(./pics/bg1.jpg);
     background-repeat: repeat-y;
     background-color: rgba(255,255,255, 0.5); /* Make the bg pic more transparent; texts more obvious */
     background-blend-mode: lighten;
@@ -123,9 +123,9 @@
 .container_img{
     width: 80%;
     max-width: 400px;
-    height: 250px;
+    height: 200px;
     display: block;
-    margin: 0px auto 30px; /* top, left/right, bottom */
+    margin: 0px auto 5px; /* top, left/right, bottom */
 }
 
 img#pet_img, div.overlay {
@@ -133,13 +133,25 @@ img#pet_img, div.overlay {
     margin: 0px auto 0px;
 }
 
+img#burger_img {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    margin: 0px auto 0px;
+}
+
+.feed {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .overlay {
     position: relative;
-    top: -250px;
-    bottom: -250px;
+    top: -200px;
+    bottom: -200px;
     left: 0;
     right: 0;
-    height: 250px;
+    height: 200px;
     width: 100%;
     opacity: 0;
     transition: .5s ease;

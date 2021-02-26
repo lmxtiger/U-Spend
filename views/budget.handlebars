@@ -23,14 +23,14 @@
 		<div class="parent">
             <div class="left">
                 {{!-- back to main page index.handlebars arrow  --}}
-                <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
+                <img src="css/pics/back-arrow.png" onclick="location.href='./login'" alt="back (to main page) arrow" height="30px" width="30px">
             </div>
             <p class="center">Budgets</p>
             <div class="right"></div>
         </div>
 
 
-		<form id="newEntryForm" method="GET" action="https://google.com"
+		<form id="newEntryForm" method="GET" action="./overHist"
 		style="margin: 10px auto 20px;">
 			{{#each this.cates-expenses}}
 			<div class="each-budget">

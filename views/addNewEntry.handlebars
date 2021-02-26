@@ -23,12 +23,12 @@
 </head>
 
 <body>
-    <form id="newEntryForm" method="POST" action="/addNewEntry"></form>
+    <form id="newEntryForm" method="get" action="./overHist"></form>
     <div class="container top_info" style="max-width: 900px;">
         <div class="parent">
             <div class="left">
                 {{!-- back to main page index.handlebars arrow  --}}
-                <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
+                <img src="css/pics/back-arrow.png" onclick="location.href='./login'" alt="back (to main page) arrow" height="30px" width="30px">
             </div>
             <p class="center">New Expense</p>
             <div class="right"></div>
@@ -65,7 +65,7 @@
 
     <div class="container" style="max-width: 900px;">
         <form id="rating"
-            method="post"
+            method="get"
             action-xhr="https://amp.dev/documentation/examples/interactivity-dynamic-content/star_rating/set"
             target="_blank">
             {{!-- checked="checked" --}}
@@ -119,8 +119,8 @@
         <br>
 
         {{!-- "submit" button  --}}
-        <input type="submit" value="Add" class="addNewEntryBtn" style="float: left;"
-        form="newEntryForm" onclick="redirectToCate()">
+        <button value="Add" class="addNewEntryBtn" style="float: left;"
+        form="newEntryForm" onclick="redirectToCate()">Add</button>
         {{!-- Cancel button  --}}
         <button class="addNewEntryBtn" style="float: right;" onclick="resetAll()">Reset</button>
         <script>
@@ -131,8 +131,8 @@
             }
 
             function redirectToCate() {
-                var selected_text = $( "select#categories option:selected" ).text();
-                
+                {{!-- var selected_text = $( "select#categories option:selected" ).text(); --}}
+                alert("Work in Progress!");
             }
         </script>
     </div>

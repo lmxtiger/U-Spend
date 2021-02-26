@@ -1,71 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+    Body {  
+    font-family: Calibri, Helvetica, sans-serif;  
+    background-color: pink;  
+    }  
+    button {   
+        background-color: #4CAF50;   
+        width: 100%;  
+            color: orange;   
+            padding: 15px;   
+            margin: 10px 0px;   
+            border: none;   
+            cursor: pointer;   
+            }   
+    form {   
+            border: 3px solid #f1f1f1;   
+        }   
+    input[type=text], input[type=password] {   
+        width: 100%;   
+                margin: 8px 0;  
+                padding: 12px 20px;   
+                display: inline-block;   
+                border: 2px solid green;   
+                box-sizing: border-box;   
+            }  
+        button:hover {   
+                opacity: 0.7;   
+            }   
+        .cancelbtn {   
+                width: auto;   
+                padding: 10px 18px;  
+                margin: 10px 5px;  
+            }   
+                
+            
+        .container {   
+        padding: 25px;   
+            background-color: lightblue;  
+        }   
+</style>   
+</head> 
 
-<head>
-	<title>Main Navigation Page</title>
-	<meta charset="utf-8">
-	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<body>    
+    <center> <h1> Login Form </h1> </center> 
 
-	{{!-- My CSS  --}}
-	<link href="css/index.css" rel="stylesheet" type="text/css">
+    <form action="./login">  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
 
-	{{!-- enable JQuery --}}
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/feed.js"></script>
-</head>
+            <button type="submit">Login</button>   
+            {{!-- onclick="location.href='./' --}}
+            <input type="checkbox" checked="checked"> Remember me   
+            <button type="button" class="cancelbtn" onclick="resetAll()"> Cancel</button>   
+            <a href="#" style="display: block;">Forgot password?</a>   
+        </div>   
+    </form>    
 
-<body>
-	{{!-- <div class="navbar">
-		<div class="page_title">Home</div>
-		<div class="dropdown">
-    		<button class="dropbtn">Dropdown </button>
-			<div class="dropdown-content">
-				<a href="./">Home</a>
-				<a href="./profile">Profile</a>
-				<a href="./help">Help</a>
-				<a href="#">Logout</a>
-			</div>
-  		</div> 
-	</div> --}}
+	<script>
+		function resetAll() {
+			location.reload(); 
+			{{!-- alert("reset!"); --}}
+		}
+	</script> 
 
-	{{!-- bg pic  --}}
-	<div class="bg_img" style="overflow: scroll;">
-		<p>U$spend</p>
-		<p style="font-size: 18px;"> Track your everyday spending and win gifts! <p>
-		<p style="font-size: 20px; margin-bottom: 10px;"> "Foxy Doggy"<p>
-
-		<div class="feedBurger">
- 			<img src="css/pics/burger.png" id="burger_img" alt="Burger Image" 
-			style="display: inline-block; height: 35px; width: 35px;">
- 			<div id="countBurger" 
-			style="font-size: 20px; display: inline-block;">
-				: <strong> 10 </strong>
-			</div>
-		<div>
-			
-		<div class="container_img">
-			<img src="css/pics/dog.gif" id="pet_img" alt="Pet Image" width="100%" height="200px" style="display: block;">
-			<div class="overlay">
-				<div class="text">Click to feed me!</div>
- 			</div>
-		</div>
-		
-  		{{!-- <div class="pet"><p>Your pet</p ></div> --}}
-		<div class="btn">
-			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>
-			<button id="overHist" onclick="location.href='./overHist'">Overview & History</button>
-			<button id="budget" onclick="location.href='./budget'">Budget</button>
-			<button id="help" onclick="location.href='./help'">Help</button>
-		</div>
-
-	</div>
-
-</body>
-
-</html>
+</body>     
+</html>  

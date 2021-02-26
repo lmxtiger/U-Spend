@@ -3,19 +3,27 @@ body {
 	background-image: url("./pics/bg1.jpg")
 }
 
+h1, h2, p{
+	text-align: left;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
 h1 {
 	font-family: monospace;
 	font-size: 30px;
 	font-weight: bold;
 	color: #264040;
-	margin: 50px 50px 40px 50px;
+	/* margin: 50px 50px 40px 50px; */
+	margin: 10px 35px 30px;
 }
 
 h2 {
 	font-family: monospace;
 	font-size: 25px;
 	color: #2f4f4f; 
-	margin: 0px 50px 10px 50px;
+	margin: 0px 35px 10px;
 }
 
 p {
@@ -23,26 +31,69 @@ p {
 	font-size: 18px;
 	color: #000000;
 	line-height: 1.5em;
-	margin: 20px 50px 40px 50px;
+	margin: 20px 35px 30px;
 }
 
 img#pet_img {
     height: 80px;
     width: 135px;
     position: relative;
-    margin: 0px 50px 0px 55px;
+    margin: 0px 35px 0px;
 }
 
 img#star_img {
     height: 75px;
     width: 190px;
     position: relative;
-    margin: 0px 50px 0px 55px;
+    margin: 0px 35px 0px;
 }
 
 img#entry_img {
     height: 65px;
     width: 150px;
     position: relative;
-    margin: 5px 50px 0px 55px;
+    margin: 5px 35px 0px;
+}
+
+/* Back button and Screen title */
+.parent {
+    display: flex;
+	/* height: 50px; */
+  }
+  
+  .left,
+  .right {
+    flex: 1;
+  }
+  
+  /* Styles for demonstration */
+  /* .parent {
+    padding: 5px;
+    border: 2px solid #000;
+  }
+  .left,
+  .right {
+    padding: 3px;
+    border: 2px solid red;
+  }
+  .center {
+    margin: 0 3px;
+    padding: 3px;
+    border: 2px solid blue;
+  } */
+
+.left img{
+    margin: 15px auto auto 0px; /* top, right, bottom, left */
+    position: absolute;
+    height: 30px;
+    width: 30px;
+}
+
+p.center {
+    width: fit-content;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }

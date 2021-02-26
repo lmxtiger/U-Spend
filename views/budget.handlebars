@@ -6,12 +6,12 @@
 	<meta charset="utf-8">
 	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	{{!-- My CSS  --}}
-	<link href="css/help.css" rel="stylesheet" type="text/css">
+	<link href="/css/budget.css" rel="stylesheet" type="text/css">
 
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -19,22 +19,52 @@
 </head>
 
 <body>
-		<h1>What does this app do?</h1>
-		<h2>Your pet</h2>
- 		<img src="css/pics/dog.gif" id="pet_img" alt="Pet Image">
-		<p>
-			Remember the pet you named when you first entered the app? Each time you track your spending, the app rewards you with a treat to feed. Feed your pet and see what happens!
-		</p>
-		<h2>Track spending</h2>
-		<img src="css/pics/entry.png" id="entry_img" alt="New Entry Image">
-		<p>
-			Track your spending by clicking on "new entry". Fill it out and it would be reflected on the "Overview & History" page.
-		</p>
-		<h2>Self reflect by rating each expenses</h2>
-		<img src="css/pics/star.png" id="star_img" alt="Star Rating Image">
-		<p>
-			When entering a new entry, reflect on that entry and give it a rating at the very bottom. 	Do you really need it? Was it an impulsive dicision?
-		</p>
+	<div class="container">
+		<div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="css/pics/back-arrow.png" onclick="location.href='./'" alt="back (to main page) arrow" height="30px" width="30px">
+            </div>
+            <p class="center">Budgets</p>
+            <div class="right"></div>
+        </div>
+
+
+		<form id="newEntryForm" method="GET" action="https://google.com"
+		style="margin: 10px auto 20px;">
+			{{#each this.cates-expenses}}
+			<div class="each-budget">
+				<div class="cate">{{@key}}</div>
+				<div class="dollar">
+					<input type="number" step="any" name="budget{{@index}}" id="budget{{@index}}"
+					placeholder="up to 40k" min="0" max="40000">
+				</div>			
+			</div>
+			{{/each}}
+		</form>
+
+		{{!-- "submit" button  --}}
+		<input type="submit" value="Add" class="budgetBtn" style="float: left;"
+		form="newEntryForm" onclick="setNewBudgets()">
+		{{!-- Cancel button  --}}
+		<button class="budgetBtn" style="float: right;" onclick="resetAll()">Reset</button>
+	</div>
 	
+	<script>
+		function resetAll() {
+			location.reload(); 
+			{{!-- console.log("Reset!"); --}}
+			{{!-- alert("reset!"); --}}
+		}
+
+		function setNewBudgets() {
+			alert("Work in Progress!");
+		}
+
+		$(document).ready(function() {
+			$("#budget0").focus();
+		})
+	</script>
 </body>
+
 </html>

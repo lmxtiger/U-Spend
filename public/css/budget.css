@@ -1,0 +1,87 @@
+.parent {
+    display: flex;
+}
+  
+.left,
+.right {
+    flex: 1;
+}
+
+.left img{
+    margin: 15px auto auto 0px; /* top, right, bottom, left */
+    position: absolute;
+    height: 30px;
+    width: 30px;
+}
+
+p.center {
+    width: fit-content;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+ /* Styles for demonstration */
+  /* .parent {
+    padding: 5px;
+    border: 2px solid #000;
+  }
+  .left,
+  .right {
+    padding: 3px;
+    border: 2px solid red;
+  }
+  .center {
+    margin: 0 3px;
+    padding: 3px;
+    border: 2px solid blue;
+  } */
+
+.budgetBtn {
+    width: 84px;
+    height: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.each-budget {
+    margin: 0px auto 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.each-budget input {
+    border: 2px solid green;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.dollar{
+	/* display:inline-block; */
+	position: relative;
+}
+.dollar input{
+	padding-left: 20px;
+}
+.dollar:focus-within::before{
+    position: absolute;
+    content: "$";
+    font-size: 20px;
+    left: 5px;
+    top: 12.5px;
+}
+
+div.cate {
+    font-size: 20px;
+    background-color: yellow;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+

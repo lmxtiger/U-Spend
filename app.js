@@ -47,8 +47,8 @@ app.get('/', index.view);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
 app.get('/budget', budget.view);
-app.get('/profile', profile.view);
 app.get('/help', help.view);
+app.get('/profile', profile.view);
 app.get('/cate/:cateName', cate.viewEachCate);
 // Example route
 // app.get('/users', user.list);

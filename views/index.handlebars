@@ -10,7 +10,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<script src="/js/feed.js"></script>
 
 	{{!-- My CSS  --}}
 	<link href="css/index.css" rel="stylesheet" type="text/css">
@@ -18,9 +17,7 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-
-	
-
+	<script src="/js/feed.js"></script>
 </head>
 
 <body>
@@ -42,26 +39,31 @@
 		<p>U$spend</p>
 		<p style="font-size: 18px;"> Track your everyday spending and win gifts! <p>
 		<p style="font-size: 20px; margin-bottom: 10px;"> "Foxy Doggy"<p>
+
+		<div class="feedBurger">
+ 			<img src="css/pics/burger.png" id="burger_img" alt="Burger Image" 
+			style="display: inline-block; height: 35px; width: 35px;">
+ 			<div id="countBurger" 
+			style="font-size: 20px; display: inline-block;">
+				: <strong> 10 </strong>
+			</div>
+		<div>
+			
 		<div class="container_img">
 			<img src="css/pics/dog.gif" id="pet_img" alt="Pet Image" width="100%" height="200px" style="display: block;">
 			<div class="overlay">
-				<div class="text">Feed me!</div>
+				<div class="text">Click to feed me!</div>
  			</div>
 		</div>
-
-		<div id="feedBurger">
- 			<img src="css/pics/burger.png" id="burger_img" alt="Burger Image" style="display: block;">
- 			<div id="countBurger"><p></p>
- 			</div>
-		<div>
-		<div>
-			
+		
   		{{!-- <div class="pet"><p>Your pet</p ></div> --}}
 		<div class="btn">
 			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>
-			<button id="budget" onclick="location.href='./budget'">Budget</button>
 			<button id="overHist" onclick="location.href='./overHist'">Overview & History</button>
+			<button id="budget" onclick="location.href='./budget'">Budget</button>
+			<button id="help" onclick="location.href='./help'">Help</button>
 		</div>
+
 	</div>
 
 </body>

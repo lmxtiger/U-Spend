@@ -58,8 +58,11 @@ img#entry_img {
 /* Back button and Screen title */
 .parent {
     display: flex;
-	/* height: 50px; */
-  }
+    position: fixed;
+	right: 15px;
+	top: 0px;
+	left: 15px;
+}
   
   .left,
   .right {

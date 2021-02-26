@@ -18,31 +18,41 @@
 	<script src="/js/bootstrap.min.js"></script>
 </head>
 
-<body style="overflow: scroll;">
+<body>
 	
 	<div class="container">
 		<div class="parent">
 			<div class="left">
 				{{!-- back to main page index.handlebars arrow  --}}
-				<img src="/css/pics/back-arrow.png" onclick="location.href='./login'" alt="back to main page arrow">
+				<img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to main page arrow">
 			</div>
 			<p class="center">Overview</p>
 			<div class="right"></div>
 		</div>
 
-		<h1>What does this app do?</h1>
-		<h2>Your pet</h2>
-		<p>
-			Remember the pet you named when you first entered the app? Each time you track your spending, the app rewards you with a treat to feed. Feed your pet and see what happens!
-		</p>
-		<h2>Track spending</h2>
-		<p>
-			Track your spending by clicking on "new entry". Fill it out and it would be reflected on the "Overview & History" page.
-		</p>
-		<h2>Self reflect by rating each expenses</h2>
-		<p>
-			When entering a new entry, reflect on that entry and give it a rating at the very bottom. Do you really need it? Was it an impulsive dicision?
-		</p>
+		<div class="content" 
+		style="margin-top: 65px; overflow:scroll; height: 750px;">
+			<h1>What does this app do?</h1>
+
+			<h2>Your pet</h2>
+			<img src="/css/pics/pet.jpeg" id="pet_img">
+			<p>
+				Remember the pet you named when you first entered the app? Each time you track your spending, the app rewards you with a treat to feed. Feed your pet and see what happens!
+			</p>
+
+			<h2>Track spending</h2>
+			<img src="/css/pics/star.png" id="star_img">
+			<p>
+				Track your spending by clicking on "new entry". Fill it out and it would be reflected on the "Overview & History" page.
+			</p>
+
+			<h2>Self reflect by rating each expenses</h2>
+			<img src="/css/pics/entry.png" id="entry_img">
+			<p>
+				When entering a new entry, reflect on that entry and give it a rating at the very bottom. Do you really need it? Was it an impulsive dicision?
+			</p>
+		</div>
+		
 	</div>
 
 </body>

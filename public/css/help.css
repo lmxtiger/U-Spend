@@ -1,0 +1,48 @@
+
+body {
+	background-image: url("./pics/bg1.jpg")
+}
+
+h1 {
+	font-family: monospace;
+	font-size: 30px;
+	font-weight: bold;
+	color: #264040;
+	margin: 50px 50px 40px 50px;
+}
+
+h2 {
+	font-family: monospace;
+	font-size: 25px;
+	color #2f4f4f; 
+	margin: 0px 50px 10px 50px;
+}
+
+p {
+	font-family: monospace;
+	font-size: 18px;
+	color: #000000;
+	line-height: 1.5em;
+	margin: 20px 50px 40px 50px;
+}
+
+img#pet_img {
+    height: 80px;
+    width: 135px;
+    position relative;
+    margin: 0px 50px 0px 55px;
+}
+
+img#star_img {
+    height: 75px;
+    width: 190px;
+    position relative;
+    margin: 0px 50px 0px 55px;
+}
+
+img#entry_img {
+    height: 65px;
+    width: 150px;
+    position relative;
+    margin: 5px 50px 0px 55px;
+}

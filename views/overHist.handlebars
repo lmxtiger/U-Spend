@@ -19,25 +19,44 @@
 </head>
 
 <body>
-    <div class="container all-cates" id="overview" style="display: block;">
-        {{#each cates-expenses}}
-        <div class="each-cate" onclick="location.href='./cate/{{@key}}' ">
-            <div>{{@key}}</div>
-            <img src="css/pics/right-arrow.png" alt="go to each category arrow">
+    <div class="container" id="overview" style="display: block;">
+         <div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="/css/pics/back-arrow.png" onclick="location.href='./'" alt="back to main page arrow">
+            </div>
+            <p class="center">Overview</p>
+            <div class="right"></div>
         </div>
-        {{/each}}
+
+        <div class="all-cates">
+            {{#each cates-expenses}}
+            <div class="each-cate" onclick="location.href='./cate/{{@key}}' ">
+                <div>{{@key}}</div>
+                <img src="css/pics/right-arrow.png" alt="go to each category arrow">
+            </div>
+            {{/each}}
+        </div>
     </div>
 
-    <div class="container all-expenses" id="history" 
-    style="display: none; overflow: scroll; margin-bottom: 55px;">
-        <div class="all-items">
+    <div class="container" id="history" 
+    style="display: none; margin-bottom: 55px;">
+        <div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="/css/pics/back-arrow.png" onclick="openTab('overview')" alt="back to main page arrow">
+            </div>
+            <p class="center">History</p>
+            <div class="right"></div>
+        </div>
+
+        <div class="all-items" style="overflow: scroll; ">
             {{#each cates-expenses}}
             <p style="background-color: yellow; width: fit-content;">{{@key}}:</p> 
             {{#each this}}
             <div class="each-item" style="padding-left: 10px;">
-                <div>{{name}}</div>
-                <div>Category: {{@key}}</div>
-                <div>${{amount}}</div>
+                <div>{{name}}: ${{amount}}</div>
+                <div style="background-color: aqua; width: fit-content;">{{@key}}</div>
                 <div>{{date}}</div>
             </div>
             {{/each}}

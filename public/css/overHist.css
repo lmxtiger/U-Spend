@@ -1,10 +1,50 @@
+.parent {
+    display: flex;
+}
+  
+.left,
+.right {
+    flex: 1;
+}
+
+.left img{
+    margin: 15px auto auto 0px; /* top, right, bottom, left */
+    position: absolute;
+    height: 30px;
+    width: 30px;
+}
+
+p.center {
+    width: fit-content;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+ /* Styles for demonstration */
+  /* .parent {
+    padding: 5px;
+    border: 2px solid #000;
+  }
+  .left,
+  .right {
+    padding: 3px;
+    border: 2px solid red;
+  }
+  .center {
+    margin: 0 3px;
+    padding: 3px;
+    border: 2px solid blue;
+  } */
+
 .all-cates {
     height: 40%;
     overflow: scroll;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    ;
 }
 
 .each-cate{
@@ -14,7 +54,7 @@
     width: 100%;
     max-width: 800px;
     padding-left: 15px;
-    margin: 10px auto 10px;  /* Center all tabs */
+    margin: 0px auto 10px;  /* Center all tabs */
     border: 2px solid rgb(13, 97, 13);
     border-radius: 10px;
     cursor: pointer;
@@ -44,7 +84,7 @@
 
 .all-items{
     overflow: scroll;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .each-item{
     display: block;

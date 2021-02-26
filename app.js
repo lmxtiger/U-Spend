@@ -7,6 +7,9 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+// handlebars "repeat"
+// const repeat = require('handlebars-helper-repeat');
+// handlebars.registerHelper('repeat', repeat);
 
 var index = require('./routes/index');
 var addNewEntry = require('./routes/addNewEntry');

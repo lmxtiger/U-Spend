@@ -17,12 +17,15 @@
         .all-items{
             overflow: scroll;
             margin-top: 20px;
+            {{!-- display: flex; --}}
         }
         .each-item{
-            display: block;
+            display: inline-block;
             border: 2px solid rgb(13, 97, 13);
             border-radius: 10px;
             margin-bottom: 15px;
+            height: 50px;
+            width: 100%;
         }
     </style>
 
@@ -45,12 +48,25 @@
         <div class="all-items">
             {{#each exp_list}}
                 <div class="each-item" style="padding-left: 10px;">
-                    <div>{{name}}</div>
-                    <div>${{amount}}</div>
+                    <div style="background-color: yellow; width: fit-content;">
+                        {{name}}: ${{amount}}, Rating: {{rating}}
+                    </div>
                     <div>{{date}}</div>
+                    {{#repeat count=rating}}
+                    <div style="display: inline;">Star </div>
+                    {{/repeat}}
                 </div>
             {{/each}}
         </div>
+
+        <script>
+            {{!-- $(document).ready(loadRating);
+            function loadRating(e) {
+                var stars = "";
+                for
+                $("div.each-item").append(stars);
+            } --}}
+        </script>
         
     </div>
 

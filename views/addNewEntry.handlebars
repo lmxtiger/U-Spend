@@ -43,7 +43,7 @@
         <label for="categories">Category</label>
         {{!-- <input list="categories" id="category" name="category" placeholder="New Category?"> --}}
         <select id="categories" name="category" form="newEntryForm">
-            <option value="0">Select Category:</option>
+            <option value="0" disabled>Select Category:</option>
             <option value="1">Dining</option>
             <option value="2">Clothings</option>
             <option value="3">Fitness</option>
@@ -120,7 +120,7 @@
 
         {{!-- "submit" button  --}}
         <input type="submit" value="Add" class="addNewEntryBtn" style="float: left;"
-        form="newEntryForm">
+        form="newEntryForm" onclick="redirectToCate()">
         {{!-- Cancel button  --}}
         <button class="addNewEntryBtn" style="float: right;" onclick="resetAll()">Reset</button>
         <script>
@@ -128,6 +128,11 @@
                 location.reload(); 
                 {{!-- console.log("Reset!"); --}}
                 {{!-- alert("reset!"); --}}
+            }
+
+            function redirectToCate() {
+                var selected_text = $( "select#categories option:selected" ).text();
+                
             }
         </script>
     </div>

@@ -2,7 +2,7 @@
 <html>   
 <head>  
 <meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
+<title> Sign Up Page </title>  
 <style>   
     body {  
         font-family: Calibri, Helvetica, sans-serif;  
@@ -28,7 +28,7 @@
         margin-left: auto;
         margin-right: auto;
     }   
-    input[type=text], input[type=password] {   
+    input[type=text], input[type=password], input[type=email] {   
         width: 100%;   
         margin: 8px 0 15px;  
         padding: 12px 20px;   
@@ -72,20 +72,24 @@
 
 <body>    
     <div style="text-align: center;">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
     </div>
 
     <form action="./home">  
         <div class="container">   
+            <label>Email <span>*</span> </label>   
+            <input type="email" placeholder="Enter Email" name="email" required>  
             <label>Username <span>*</span> </label>   
             <input type="text" placeholder="Enter Username" name="username" required>  
             <label>Password <span>*</span> </label>   
             <input type="password" placeholder="Enter Password" name="password" required>  
+            <label>Confirm Password <span>*</span> </label>   
+            <input type="password" placeholder="Reenter Password" name="confirmPW" required>  
+            <label>Pet Name (optional)</label>   
+            <input type="text" pattern="[A-Za-z]*" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" name="petName" maxlength="12" required>  
 
-            <input type="checkbox"> Remember me  
-            <button type="submit">Login</button>   
-            <a href="#">Forgot password?</a>   
-            <a href="./signup" style="float: right;">Sign up now!</a>
+            <button type="submit">Sign Up</button>   
+            Already have an account? <a href="./">Login</a>
             {{!-- onclick="location.href='./' --}} 
             <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   

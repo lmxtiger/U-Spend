@@ -1,3 +1,7 @@
+body {
+	background-image: url("./pics/bg1.jpg");
+}
+
 .top_info input, .top_info select {
     display: block;
     /* margin: 0 auto; */
@@ -5,23 +9,32 @@
     height: 60px;
     font-size: 25px;
     margin-bottom: 8%;
+	border: 2px solid green;
     border-radius: 10px;
+}
+
+.top_info label {
+	font-size: 18px
+}
+
+.top_info input:focus, .top_info select:focus {
+	border-radius: 1px;
 }
 
 .dollar{
 	/* display:inline-block; */
 	position: relative;
-	}
+}
 .dollar input{
 	padding-left: 20px;
-	}
+}
 .dollar:focus-within::before{
-  position: absolute;
-  content: "$";
-  font-size: 25px;
-  left: 5px;
+	position: absolute;
+	content: "$";
+	font-size: 25px;
+	left: 5px;
 	top: 12.5px;
- 	}
+}
 
 /* main label{
     font-size: 25px;

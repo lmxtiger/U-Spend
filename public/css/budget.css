@@ -1,3 +1,7 @@
+body {
+	background-image: url("./pics/bg1.jpg");
+}
+
 .parent {
     display: flex;
 }
@@ -62,6 +66,11 @@ p.center {
     font-size: 20px;
 }
 
+.each-budget input:focus {
+    /* box-shadow: 0 0 5pt 5pt red; */
+    border-radius: 1px;
+}
+
 .dollar{
 	/* display:inline-block; */
 	position: relative;
@@ -77,9 +86,9 @@ p.center {
     top: 12.5px;
 }
 
-div.cate {
-    font-size: 20px;
-    background-color: yellow;
+.cate {
+    font-size: 18px;
+    /* background-color: yellow; */
     margin-bottom: 5px;
     width: fit-content;
 }

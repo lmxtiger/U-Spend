@@ -50,7 +50,7 @@
             <div class="right"></div>
         </div>
 
-        <div class="all-items" style="overflow: scroll; ">
+        <div class="all-items">
             {{#each cates-expenses}}
             <p style="background-color: yellow; width: fit-content;">{{@key}}:</p> 
             {{#each this}}
@@ -66,7 +66,8 @@
 
     {{!-- bottom navbar / Overview vs History  Switch tab --}}
     <div class="tab_bar" style="width: 100%;">
-       <button onclick="openTab('overview')" id="overviewBtn" style="background-color: bisque;">Overview</button>
+       <button onclick="openTab('overview')" id="overviewBtn" 
+       style="background-color: bisque; border-right: none;">Overview</button>
        <button onclick="openTab('history')" id="historyBtn" style="background-color: #EFEFEF;">History</button>
     </div>
    

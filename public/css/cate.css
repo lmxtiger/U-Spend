@@ -1,3 +1,7 @@
+body {
+	background-image: url("./pics/bg1.jpg");
+}
+
 .parent {
     display: flex;
   }

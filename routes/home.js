@@ -13,3 +13,12 @@ exports.view = function(req, res){
 	// }
 	res.render('home', burger_num);
 };
+
+exports.feed = function(req, res) {
+	var feedSignal = req.body.feed;
+	if(feedSignal == 1) {
+		console.log(burger_num.burger_num);
+		burger_num.burger_num = Math.max(burger_num.burger_num - 1, 0);
+	}
+	res.send(feedSignal);
+}

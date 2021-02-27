@@ -11,26 +11,17 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    // initFeedGesture();
-    $('div.overlay').on("click", function() {
-        var num = $('strong').html();
-        num = parseInt(num);
-        console.log("num of burgers: " + num);
-        num = Math.max(--num, 0);
-        $('strong').html(num);
-    })
+    initFeedGesture();
+    // fakeFeed();
 }
 
 function initFeedGesture() {
+    // Update database (feed.json data)
     $(function() {
         $('div.overlay').bind('click', tapholdHandler);
 
         function tapholdHandler(event) {
-            // var num = $('strong').html();
-            // num = parseInt(num);
-            // console.log("num of burgers: " + num);
-            // num = Math.max(--num, 0);
-            // $('strong').html(num);
+           $.post("feed", {feed: 1}, updateCountUI);
 		};
             // $.getJSON('feed.json', function (data) {
             //     console.log("tapholdHandler");
@@ -48,5 +39,24 @@ function initFeedGesture() {
             //         }
             //     } 
             // );
+        function updateCountUI(res) {
+            var str = $('strong').html();
+            var num = parseInt(str.split(' ')[1]);
+            // console.log("num of burgers: " + num);
+            var alertMSG = num>0 ? "Feeded!" : "Oops! You have no burger left!";
+            alert(alertMSG);
+            num = Math.max(--num, 0);
+            $('strong').html(": " + num);
+        }
     });
+}
+
+function fakeFeed() {
+    $('div.overlay').on("click", function() {
+        var str = $('strong').html();
+        var num = parseInt(str.split(' ')[1]);
+        console.log("num of burgers: " + num);
+        num = Math.max(--num, 0);
+        $('strong').html(": " + num);
+    })
 }

@@ -48,6 +48,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/signup', signup.view);
 app.get('/home', home.view);
+app.post('/feed', home.feed);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
 app.get('/budget', budget.view);

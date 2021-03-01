@@ -33,16 +33,17 @@
         </div>
 
         <div class="budget-spent">
-            <div style="color: green;">
+            <div style="padding-left: 10px; color: green;" >
+                Budget:
                 {{#with budget_spent}}
                     {{#unless budget}}
-                    Budget: <div style="color: orange;">Unset</div>
+                    <a href="../budget" style="color: orange;">Unset</a>
                     {{else}}
-                    Budget: ${{budget}}
+                    <a href="../budget" style="color: green;">${{budget}}</a>
                     {{/unless}}
                 {{/with}}
             </div>
-            <div style="color: red;">
+            <div style="color: red; text-align: right; padding-right: 10px;">
                 Spent: ${{budget_spent.spent}}
             </div>
         </div>
@@ -50,7 +51,7 @@
         <div class="all-items">
             {{#each exp_list}}
                 <div class="each-item" style="padding-left: 10px;">
-                    <div style="background-color: yellow; width: fit-content;">
+                    <div style="background-color: orange; width: fit-content;">
                         {{name}}: ${{amount}}, Rating: {{rating}}
                     </div>
                     <div>{{date}}</div>

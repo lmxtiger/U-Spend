@@ -61,7 +61,7 @@ p.center {
 
 .budget-spent {
 	width: 100%;
-	border: 2px solid;
+	/* border: 2px solid; */
 	display: flex;
 }
 
@@ -69,5 +69,9 @@ p.center {
 	display: inline-block;
 	width: 50%;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
+}
+
+.budget-spent a {
+	text-decoration: underline;
 }

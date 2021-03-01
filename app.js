@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+// var handlebars = require('handlebars');
 // handlebars "repeat"
 // const repeat = require('handlebars-helper-repeat');
 // handlebars.registerHelper('repeat', repeat);
@@ -51,6 +52,7 @@ app.get('/home', home.view);
 app.post('/feed', home.feed);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
+app.post('/overHistNew', overHist.overHistNew);
 app.get('/budget', budget.view);
 app.get('/help', help.view);
 app.get('/profile', profile.view);

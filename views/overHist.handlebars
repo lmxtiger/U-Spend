@@ -51,16 +51,23 @@
         </div>
 
         <div class="all-items">
-            {{#each cates-expenses}}
+            {{#each history}}
+            <div class="each-item" style="padding-left: 10px;">
+                <div>{{name}}: ${{amount}}, rating: {{rating}}</div>
+                <div style="background-color: aqua; width: fit-content;">{{category}}</div>
+                <div>{{date}}</div>
+            </div>
+            {{/each}}
+            {{!-- {{#each cates-expenses}}
             <p style="background-color: yellow; width: fit-content;">{{@key}}:</p> 
             {{#each this}}
             <div class="each-item" style="padding-left: 10px;">
-                <div>{{name}}: ${{amount}}</div>
+                <div>{{name}}: ${{amount}}, rating: {{rating}}</div>
                 <div style="background-color: aqua; width: fit-content;">{{@key}}</div>
                 <div>{{date}}</div>
             </div>
             {{/each}}
-            {{/each}}
+            {{/each}} --}}
         </div>
     </div>
 

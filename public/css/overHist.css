@@ -101,8 +101,8 @@ p.center {
 .all-items{
     overflow: scroll;
     margin-top: 65px;
-    height: 700px;
-    /* border: 2px solid; */
+    height: 550px;
+    border: 2px solid;
 }
 .each-item{
     display: block;

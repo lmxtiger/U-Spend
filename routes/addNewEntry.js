@@ -5,3 +5,4 @@ exports.addNewEntry = function(req, res){
 
     res.render('addNewEntry', expenses);
 };
+

@@ -14,19 +14,6 @@
 	{{!-- My CSS  --}}
 	<link href="/css/cate.css" rel="stylesheet" type="text/css">
     <style>
-        .all-items{
-            overflow: scroll;
-            margin-top: 20px;
-            {{!-- display: flex; --}}
-        }
-        .each-item{
-            display: inline-block;
-            border: 2px solid rgb(13, 97, 13);
-            border-radius: 10px;
-            margin-bottom: 15px;
-            height: 50px;
-            width: 100%;
-        }
     </style>
 
 	{{!-- enable JQuery --}}
@@ -43,6 +30,21 @@
             </div>
             <p class="center">{{cateName}}</p>
             <div class="right"></div>
+        </div>
+
+        <div class="budget-spent">
+            <div style="color: green;">
+                {{#with budget_spent}}
+                    {{#unless budget}}
+                    Budget: <div style="color: orange;">Unset</div>
+                    {{else}}
+                    Budget: ${{budget}}
+                    {{/unless}}
+                {{/with}}
+            </div>
+            <div style="color: red;">
+                Spent: ${{budget_spent.spent}}
+            </div>
         </div>
 
         <div class="all-items">

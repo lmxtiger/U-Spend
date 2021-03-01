@@ -10,6 +10,40 @@ $(document).ready(function() {
  */
 function initializePage() {
     $('select#categories').on('change', toggleNewCate);
+    initEntryForm();
+}
+
+function initEntryForm() {
+    $("#newEntryForm").submit(function(e) {
+        var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
+        name_val = $("input#name").val();
+        amt_val = $("input#amount").val();
+        selected_val = $( "select#categories option:selected" ).val();
+        if(selected_val == "-1") {
+            cate_text = $(".container.top_info").find("input#new_cate").val(); 
+        }else{
+            cate_text = $( "select#categories option:selected" ).text();
+        }
+        var in_date = new Date();
+        date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
+        rating_val = $( "input[name='rating']:checked" ).val();
+    
+        $.post('overHistNew', 
+    
+                {name_val: name_val,
+                amt_val: amt_val,
+                cate: [selected_val, cate_text],
+                rating_val: rating_val,
+                date_val: date_val},
+    
+                postSubmit);
+        
+        $(this).attr("action", "./cate/"+cate_text);
+    });
+   
+    function postSubmit(res) {
+        alert("New spending logged!");
+    }
 }
 
 function toggleNewCate(e) {

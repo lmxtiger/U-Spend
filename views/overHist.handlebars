@@ -23,28 +23,33 @@
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+    function drawChart() {
+        var cate_spent_arr = [
+            ['Category', 'Total Spent'],
+        ];
+        var cates = $('div#cateName');
+        var spents = $('div#spent');
+        for(var i=0; i<=cates.length; i++) {
+            cate_spent_arr.push( [$(cates).eq(i).text(), parseFloat($(spents).eq(i).text() )] );
+        }
+        {{!-- $(cates).each(function(index) {
+            cate_spent_arr.push( [$(this).text(), 5] );
+        }); --}}
+        {{!-- console.log("cate_spent_arr length: " + cate_spent_arr.length); --}}
+
+        var data = google.visualization.arrayToDataTable(cate_spent_arr);
 
         var options = {
-          {{!-- title: 'My Daily Activities', --}}
-          titlePosition: 'none',
-          is3D: true,
-          backgroundColor: 'transparent',
-          chartArea: {left:25, right: 25, top:5, bottom: 25, width:'90%', height:'90%'},
-          legend: {position: 'bottom'}
+            titlePosition: 'none',
+            is3D: true,
+            backgroundColor: 'transparent',
+            chartArea: {left:25, right: 25, top:5, bottom: 25, width:'90%', height:'90%'},
+            legend: {position: 'bottom'}
         };
 
         var chart = new google.visualization.PieChart( document.getElementById('piechart') );
         chart.draw(data, options);
-      }
+    }
     </script>
 </head>
 
@@ -64,6 +69,15 @@
             <div id="piechart_title">Your Total Spending</div>
             <div id="piechart"></div>
         </div>
+
+        {{!-- hidden element: [category, total spent] --}}
+        <div style="display: none;">
+            {{#each categories}}
+            <div id="cateName">{{@key}}</div>
+            <div id="spent">{{spent}}</div>
+            {{/each}}
+        </div>
+ 
 
         <div class="all-cates">
             {{#each cates-expenses}}

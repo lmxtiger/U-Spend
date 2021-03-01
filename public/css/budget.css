@@ -55,11 +55,13 @@ p.center {
 
 .each-budget {
     margin: 0px auto 20px;
-    display: inline-block;
+    display: flex;
     width: 100%;
+    border: 2px solid;
+    font-size: 20px;
 }
 
-.each-budget input {
+/* .each-budget input {
     border: 2px solid green;
     border-radius: 10px;
     height: 50px;
@@ -67,9 +69,8 @@ p.center {
 }
 
 .each-budget input:focus {
-    /* box-shadow: 0 0 5pt 5pt red; */
     border-radius: 1px;
-}
+} */
 
 .dollar{
 	/* display:inline-block; */
@@ -87,10 +88,22 @@ p.center {
 }
 
 .cate {
-    font-size: 18px;
+    /* font-size: 20px; */
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
     /* background-color: yellow; */
-    margin-bottom: 5px;
-    width: fit-content;
+    margin-bottom: 0px;
+    width: 40%;
 }
+
+.each-budget div {
+    width: 40%;
+}
+
+.each-budget input {
+    width: 100%;
+}
+
 
 

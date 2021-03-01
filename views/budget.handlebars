@@ -16,6 +16,7 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/budget_action.js"></script>
 </head>
 
 <body>
@@ -30,24 +31,30 @@
         </div>
 
 
-		<form id="newEntryForm" method="GET" action="./overHist"
-		style="margin: 10px auto 20px;">
-			{{#each this.cates-expenses}}
+		<form id="newEntryForm" action="./overHist" style="margin: 10px auto 20px;">
+			{{#each categories}}
 			<div class="each-budget">
-				<label class="cate">{{@key}}</label>
-				<div class="dollar">
-					<input type="number" step="any" name="budget{{@index}}" id="budget{{@index}}"
+				<a class="cate" href="./cate/{{@key}}">{{@key}}</a>
+				{{#unless budget}}
+                <div id="budget{{@key}}" style="color: orange;">Unset</div>
+                {{else}}
+                <div id="budget{{@key}}" style="color: green;">${{budget}}</div>
+                {{/unless}}
+				<img src="/css/pics/edit_icon.png" height="25px" width="25px" 
+				style="float: right; margin-right: 10px; margin-left: auto;">
+				{{!-- <div class="dollar">
+					<input type="number" step="any" name="budget{{@key}}" id="budget{{@key}}"
 					placeholder="At least $10; up to $40k" min="10" max="40000">
-				</div>			
+				</div>			 --}}
 			</div>
 			{{/each}}
 		</form>
 
 		{{!-- "submit" button  --}}
-		<input type="submit" value="Add" class="budgetBtn" style="float: left;"
+		<input type="submit" value="Yes" class="budgetBtn" style="float: left;"
 		form="newEntryForm" onclick="setNewBudgets()">
 		{{!-- Cancel button  --}}
-		<button class="budgetBtn" style="float: right;" onclick="resetAll()">Reset</button>
+		<button class="budgetBtn" style="float: right;" onclick="resetAll()">Cancel</button>
 	</div>
 	
 	<script>

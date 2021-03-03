@@ -10,7 +10,7 @@ exports.viewEachCate = function(req, res){
         "budget_spent": budget_spent,
         "exp_list": exp_list
     }
-    console.log(res_render);
+    // console.log(res_render);
     res.render('cate', res_render);
 };
 

@@ -40,7 +40,7 @@ exports.overHistNew = function(req, res){
         };
     }else{
         expenses['cates-expenses'][cate[1]].unshift(newEntry);
-        expenses['categories'][cate[1]].spent = expenses['categories'][cate[1]].spent + req.body.amt_val;
+        expenses['categories'][cate[1]].spent = expenses['categories'][cate[1]].spent + parseFloat( req.body.amt_val );
     }
     expenses["history"].unshift(newEntry);
     res.send(newEntry);

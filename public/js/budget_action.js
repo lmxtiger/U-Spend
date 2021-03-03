@@ -9,7 +9,80 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    // initBudgetForm();
+    $(function() {
+        function setBudget(cateName) {
+            var budget = $( "div.budget-dialog input" ).val();
+            postNewBudget(budget);
+            $.post('budgetNew', 
+            {
+                "cateName": cateName,
+                "budget": budget
+            },
+            postNewBudget);
+            dialog.dialog( "close" );
+        };
+
+        function postNewBudget(budget, category) {
+            alert("Budget = $" + budget + " for Category = " + category + " successfully set!");
+            // FAKE update UI
+            $('#budget' + category).text("$" + budget);
+            $('#budget' + category).css("color", "green");
+        }
+
+
+        var dialog = $( "div.budget-dialog" ).dialog({
+            autoOpen: false,
+            modal: true,
+            // buttons: [
+            //     {
+            //         text: "OK",
+            //         click: setBudget
+            //     },
+            //     {
+            //         text: "CANCEL",
+            //         click: function() {
+            //             dialog.dialog( "close" );
+            //         }
+            //     }
+            // ]
+        });
+
+        $(".each-budget img").click(function() {
+            var cateName = $(this).attr('id').substring(3);
+            var old_display_budget = $('#budget' + cateName).text();
+            var input_old_val = old_display_budget == "Unset" ? "" : parseFloat(old_display_budget.substring(1));
+            // Display old budget in the input box and set the blinking cursor after the text
+            $( "div.budget-dialog input" ).focus().val(input_old_val);
+
+            dialog.dialog('option', {
+                'title': cateName,
+                'buttons': [
+                    {
+                        text: "OK",
+                        click: function() {
+                            var budget = $( "div.budget-dialog input" ).val();
+                            $.post('budgetNew', 
+                            {
+                                "cateName": cateName,
+                                "budget": budget
+                            }, postNewBudget(budget, cateName));
+                            dialog.dialog( "close" );
+                        }
+                    },
+                    {
+                        text: "CANCEL",
+                        click: function() {
+                            dialog.dialog( "close" );
+                        }
+                    }
+                ]
+            });
+            dialog.dialog( "open" );
+        });
+
+    });
+};
+
     // $(function() {
     //     function setBudget() {
     //         alert("yes!");
@@ -51,7 +124,6 @@ function initializePage() {
     //     });
     // });
 
-}
 
         // $("#input"+cate_name).css({
         //     "padding-left": "20px"
@@ -62,7 +134,4 @@ function initializePage() {
         //     "position": "absolute"
         // });
 
-function initBudgetForm() {
-
-}
 

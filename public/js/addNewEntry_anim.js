@@ -42,7 +42,7 @@ function initEntryForm() {
     });
    
     function postSubmit(res) {
-        alert("New spending logged!");
+        alert("New spending logged! YOU GET ONE BURGER!");
     }
 }
 
@@ -73,5 +73,4 @@ function toggleNewCate(e) {
         }
     }
     e.preventDefault();
-    // alert("Selected Option Value: " + selected_val);
 }

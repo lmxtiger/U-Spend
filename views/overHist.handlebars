@@ -96,7 +96,7 @@
         <div class="parent">
             <div class="left">
                 {{!-- back to main page index.handlebars arrow  --}}
-                <img src="/css/pics/back-arrow.png" onclick="openTab('overview')" alt="back to main page arrow">
+                <img id=toArrow src="/css/pics/back-arrow.png" onclick="openTab('overview')" alt="back to main page arrow">
             </div>
             <p class="center">History</p>
             <div class="right"></div>
@@ -105,8 +105,8 @@
         <div class="all-items">
             {{#each history}}
             <div class="each-item" style="padding-left: 10px;">
-                <div>{{name}}: ${{amount}}, rating: {{rating}}</div>
-                <div style="background-color: aqua; width: fit-content;">{{category}}</div>
+                <div style="font-weight: bold;">{{name}}: ${{amount}}, rating: {{rating}}</div>
+                <div style="background-color: AliceBlue; width: fit-content;">{{category}}</div>
                 <div>{{date}}</div>
             </div>
             {{/each}}
@@ -115,7 +115,7 @@
             {{#each this}}
             <div class="each-item" style="padding-left: 10px;">
                 <div>{{name}}: ${{amount}}, rating: {{rating}}</div>
-                <div style="background-color: aqua; width: fit-content;">{{@key}}</div>
+                <div style="background-color: AliceBlue; width: fit-content;">{{@key}}</div>
                 <div>{{date}}</div>
             </div>
             {{/each}}

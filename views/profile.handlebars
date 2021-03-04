@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>User Profile Page</title>
+	<meta charset="utf-8">
+	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- MUST include the precursory slash (only for this file)! --}}
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	{{!-- My CSS  --}}
+	<link href="/css/profile.css" rel="stylesheet" type="text/css">
+    <style>
+    </style>
+
+	{{!-- enable JQuery --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="left">
+                {{!-- back to main page index.handlebars arrow  --}}
+                <img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to overview arrow" height="30px" width="30px">
+            </div>
+            <p class="center">Profile</p>
+            <div class="right"></div>
+        </div>
+        
+
+        <div>
+            <form id="email-pw">
+                <label>Username</label>   
+                <input type="text" placeholder="Enter Username" name="username" required>  
+                <label>Password</label>   
+                <input type="password" placeholder="Enter Password" name="password" required>  
+            </form>
+            <button onclick="location.href='./' ">Sign Out</button>
+        </div>
+    </div>
+</body>
+
+</html>

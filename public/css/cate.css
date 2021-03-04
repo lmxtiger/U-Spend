@@ -4,6 +4,7 @@ body {
 
 .parent {
     display: flex;
+	z-index: 100;
   }
   
   .left,
@@ -47,22 +48,26 @@ p.center {
   overflow: scroll;
   margin-top: 15px;
   height: fit-content;
-  border: 2px solid;
-  border-color: #ffcb91;
+  border: 2px solid #66b8ff;
+  /* border-color: #ffcb91; */
   border-radius: 10px;
-  padding: 5px 5px 5px 5px;
+  padding: 10px 5px;
+}
+
+.all-items div.each-item:not(:last-child) {
+	margin-bottom: 10px;
 }
 
 .each-item{
-  display: inline-block;
-  border: 2px solid rgb(13, 97, 13);
-  border-radius: 10px;
-  margin-bottom: 15px;
-  height: 70px;
-  width: 100%;
-  padding: 5px 0px 10px 5px;
-  border-color: #66b8ff;
-  line-height: 22pt;
+	display: inline-block;
+	background-color: #f0f8ff;
+	border: 2px solid #66b8ff;
+	border-radius: 10px;
+	/* margin-bottom: 15px; */
+	height: 70px;
+	width: 100%;
+	padding: 5px;
+	line-height: 22pt;
 }
 
 .budget-spent {

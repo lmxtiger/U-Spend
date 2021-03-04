@@ -4,6 +4,7 @@ body {
 
 .parent {
     display: flex;
+    z-index: 100;
 }
   
 .left,
@@ -59,12 +60,11 @@ p.center {
     margin: 0px auto 20px;
     display: flex;
     width: 100%;
-    border: 1px solid;
-    border-color: #99cfff;
+    background-color: #f0f8ff;
+    border: 2px solid #99cfff;
+    border-radius: 10px;
     font-size: 20px;
     padding: 15px 0px 15px 4px;
-    background-color: #f0f8ff;
-    border-radius: 15px;
 }
 
 /* .each-budget input {

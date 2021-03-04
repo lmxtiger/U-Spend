@@ -12,7 +12,7 @@ function initializePage() {
     $(function() {
         function setBudget(cateName) {
             var budget = $( "div.budget-dialog input" ).val();
-            postNewBudget(budget);
+            // postNewBudget(budget);
             $.post('budgetNew', 
             {
                 "cateName": cateName,
@@ -23,28 +23,16 @@ function initializePage() {
         };
 
         function postNewBudget(budget, category) {
-            alert("Budget = $" + budget + " for Category = " + category + " successfully set!");
             // FAKE update UI
             $('#budget' + category).text("$" + budget);
             $('#budget' + category).css("color", "green");
+            alert("Budget = $" + budget + " for Category = " + category + " successfully set!");
         }
 
 
         var dialog = $( "div.budget-dialog" ).dialog({
             autoOpen: false,
             modal: true,
-            // buttons: [
-            //     {
-            //         text: "OK",
-            //         click: setBudget
-            //     },
-            //     {
-            //         text: "CANCEL",
-            //         click: function() {
-            //             dialog.dialog( "close" );
-            //         }
-            //     }
-            // ]
         });
 
         $(".each-budget img").click(function() {
@@ -61,12 +49,18 @@ function initializePage() {
                         text: "OK",
                         click: function() {
                             var budget = $( "div.budget-dialog input" ).val();
-                            $.post('budgetNew', 
-                            {
-                                "cateName": cateName,
-                                "budget": budget
-                            }, postNewBudget(budget, cateName));
-                            dialog.dialog( "close" );
+                            if(budget != "" && parseFloat(budget) >= 10 && parseFloat(budget) <= 40000) {
+                                $.post('budgetNew', 
+                                {
+                                    "cateName": cateName,
+                                    "budget": budget
+                                }, postNewBudget(budget, cateName));
+                                dialog.dialog( "close" );
+                            }else{
+                                alert("Please enter a valid budget!");
+                                $( "div.budget-dialog input" ).val("");
+                                $( "div.budget-dialog input" ).focus();
+                            }
                         }
                     },
                     {

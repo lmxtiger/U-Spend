@@ -123,11 +123,9 @@
         {{!-- </form> --}}
         <br>
 
-        {{!-- "submit" button  --}}
-        <button type="submit" value="Add" class="addNewEntryBtn" style="float: left;"
+        <button class="addNewEntryBtn" style="float: left;" onclick="resetAll()">Reset</button>
+        <button type="submit" value="Add" class="addNewEntryBtn" style="float: right;"
         form="newEntryForm">Add</button>
-        {{!-- Cancel button  --}}
-        <button class="addNewEntryBtn" style="float: right;" onclick="resetAll()">Reset</button>
         <script>
             function resetAll() {
                 location.reload(); 

@@ -46,7 +46,7 @@ p.center {
 .all-items{
   overflow: scroll;
   margin-top: 15px;
-  height: 780px;
+  height: fit-content;
   border: 2px solid;
   border-color: #ffcb91;
   border-radius: 10px;

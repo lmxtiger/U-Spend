@@ -69,7 +69,7 @@
 .bg_img p {
     font-size: 35px;
     font-family: monospace;
-    text-shadow: 2px 2px  #2dc032;
+    /* text-shadow: 2px 2px  #ffefa1; */
     text-align: center;
     margin-top: 10px;
 }
@@ -90,9 +90,9 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-size-adjust: auto;
     color: white; 
-    background-color: #3caa40;
-    border: 2px solid rgb(13, 97, 13); /* Green border */
-    border-radius: 10px;
+    background-color: #ffcb91;
+    /* border: 2px solid rgb(13, 97, 13);  Green border */
+    border-radius: 15px;
     cursor: pointer; /* Pointer/hand icon */
     width: 100%;
     height: 70px;

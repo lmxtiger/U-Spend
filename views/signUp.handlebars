@@ -67,7 +67,14 @@
         left: 0px;
         width: 100%;
     } 
-</style>   
+</style>
+
+    <!-- need changes
+    <script src="/js/facebook.js"></script>   
+    {{> facebook}}
+    <script src="/js/facebook.js"></script>
+    -->
+
 </head> 
 
 <body>    
@@ -87,9 +94,19 @@
             <input type="password" placeholder="Reenter Password" name="confirmPW" required>  
             <label>Pet Name (optional)</label>   
             <input type="text" pattern="[A-Za-z]*" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" name="petName" maxlength="12" required>  
-
             <button type="submit">Sign Up</button>   
             Already have an account? <a href="./">Login</a>
+
+            <!-- FB login button
+            <div class="jumbotron">
+            <p class="facebookLogin">Please login through Facebook
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                </fb:login-button>
+            </p>
+
+            </div>
+            -->
+
             {{!-- onclick="location.href='./' --}} 
             <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   

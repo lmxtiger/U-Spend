@@ -46,19 +46,25 @@ p.center {
 .budgetBtn {
     width: 84px;
     height: 60px;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 5;
+    margin-bottom: 5;
     font-size: 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 15px;
+    background-color: #f0f8ff;
+
 }
 
 .each-budget {
     margin: 0px auto 20px;
     display: flex;
     width: 100%;
-    border: 2px solid;
+    border: 1px solid;
+    border-color: #99cfff;
     font-size: 20px;
+    padding: 15px 0px 15px 4px;
+    background-color: #f0f8ff;
+    border-radius: 15px;
 }
 
 /* .each-budget input {
@@ -90,7 +96,8 @@ p.center {
 .cate {
     /* font-size: 20px; */
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    font-weight: bold;
     color: black;
     /* background-color: yellow; */
     margin-bottom: 0px;

@@ -1,35 +1,7 @@
-body {
+.container {
 	background-image: url("./pics/bg1.jpg");
-}
-
-.parent {
-    display: flex;
-    position: fixed;
-	right: 15px;
-	top: 0px;
-	left: 15px;
-    background-color: antiquewhite;
-}
-  
-.left,
-.right {
-    flex: 1;
-}
-
-.left img{
-    margin: 15px auto auto 0px; /* top, right, bottom, left */
-    position: absolute;
-    height: 30px;
-    width: 30px;
-}
-
-p.center {
-    width: fit-content;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 12px;
-    margin-top: 12px;
+	margin-top: 59px;
+	height: 760px;
 }
 
 body{
@@ -46,7 +18,7 @@ body{
   padding: 0px;
   text-align: center;
   margin: auto;
-  margin-top: 17%;
+  margin-top: 15px;
   color: black;
   font-family: monospace;
 }

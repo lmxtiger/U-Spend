@@ -6,15 +6,16 @@
 	<meta charset="utf-8">
 	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {{!-- MUST include the precursory slash (only for this file)! --}}
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	{{!-- <link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet"> --}}
+
 	{{!-- My CSS  --}}
+    <link href="/css/top-navbar.css" rel="stylesheet" type="text/css">
 	<link href="/css/profile.css" rel="stylesheet" type="text/css">
-    <style>
-    </style>
 
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -22,15 +23,29 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="parent">
-            <div class="left">
-                {{!-- back to main page index.handlebars arrow  --}}
-                <img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to overview arrow" height="30px" width="30px">
-            </div>
-            <p class="center">Profile</p>
-            <div class="right"></div>
+    <div class="parent">
+        <div class="left">
+            <img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to main page arrow">
         </div>
+        <p class="center">Profile</p>
+        <div class="right dropdown">
+            <button class="dropbtn">
+                <img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
+                <i class="fa fa-caret-down" style="display: inline-block;"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="./home">Home</a>
+                <hr>
+                <a href="./profile">Profile</a>
+                <hr>
+                <a href="./help">Help</a>
+                <hr>
+                <a href="./">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         
         <div class="profile">
             <img src="css/pics/accountPic.png" alt="profile picture" class="profile-img">

@@ -15,15 +15,17 @@ function statusChangeCallback(response) {
 	if (response.status === 'connected') {
 		// Logged into your app and Facebook.
 		console.log('Successfully logged in with Facebook');
-		FB.api('/me?fields=name, first_name, picture.width(480)', changeUser);
+		FB.api('/me?fields=name, first_name, picture.width(480).height(480)', changeUser);
 	}
 	// 
 }
 
 function changeUser(response) {
-	console.log(response.name);
+	console.log(response.id);
+	// var profile_url = "https://graph.facebook.com/{userID}?fields=picture.width(480).height(480)" 
 	$.post("login_profile",
-		{fb_whole_name: response.name},
+		{fb_whole_name: response.name,
+		fb_profile_url: response.picture.data.url},
 		postLogin);
 	window.location = './home';
 }

@@ -32,6 +32,44 @@ p.center {
     margin-top: 12px;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #ffefa1;
+  background-size: cover;
+}
+
+.profile{
+  width: 345px;
+  height: 400px;
+  background-color: #e6f3ff;
+  padding: 0px;
+  text-align: center;
+  margin: auto;
+  margin-top: 17%;
+  color: black;
+  font-family: monospace;
+}
+
+.profile-img{
+  width: 120px;
+  height: 120px;
+}
+
+.profile h2{
+  font-family: monospace;
+}
+
+.profile h4{
+  font-family: monospace;
+}
+
+#email-pw{
+  text-align: center;
+  margin: 25px 15px 0px 15px;
+  line-height: 20pt;
+}
+
  /* Styles for demonstration */
   /* .parent {
     padding: 5px;

@@ -6,13 +6,16 @@
 	<meta charset="utf-8">
 	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	{{!-- <link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet"> --}}
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	{{!-- <link rel="stylesheet" href="/resources/demos/style.css"> --}}
+	  
 	{{!-- My CSS  --}}
+	<link href="/css/top-navbar.css" rel="stylesheet" type="text/css">
 	<link href="/css/budget.css" rel="stylesheet" type="text/css">
 
 	{{!-- enable JQuery --}}
@@ -23,30 +26,53 @@
 </head>
 
 <body>
+	<div class="parent">
+		<div class="left">
+			<img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to main page arrow">
+		</div>
+		<p class="center">Budget</p>
+		<div class="right dropdown">
+			<button class="dropbtn">
+				<img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
+				<i class="fa fa-caret-down" style="display: inline-block;"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="./home">Home</a>
+				<hr>
+				<a href="./profile">Profile</a>
+				<hr>
+				<a href="./help">Help</a>
+				<hr>
+				<a href="./">Logout</a>
+			</div>
+		</div>
+	</div>
+
 	<div class="container">
-		<div class="parent">
+		{{!-- <div class="parent">
             <div class="left">
-                {{!-- back to main page index.handlebars arrow  --}}
                 <img src="css/pics/back-arrow.png" onclick="location.href='./home'" alt="back (to main page) arrow" height="30px" width="30px">
             </div>
             <p class="center">Budgets</p>
             <div class="right"></div>
-        </div>
-
+        </div> --}}
 
 		{{!-- <form id="newEntryForm" action="./overHist" style="margin: 10px auto 20px;"></form> --}}
-		{{#each categories}}
-		<div class="each-budget">
-			<a class="cate" href="./cate/{{@key}}" style="text-decoration: underline;">{{@key}}</a>
-			{{#unless budget}}
-			<div id="budget{{@key}}" style="color: orange;">Unset</div>
-			{{else}}
-			<div id="budget{{@key}}" style="color: green;">${{budget}}</div>
-			{{/unless}}
-			<img src="/css/pics/edit_icon.png" id="img{{@key}}" height="25px" width="25px" 
-			style="float: right; margin-right: 10px; margin-left: auto;">
+		<div class="all-budgets">
+			{{#each categories}}
+			<div class="each-budget">
+				<a class="cate" href="./cate/{{@key}}" style="text-decoration: underline;">{{@key}}</a>
+				{{#unless budget}}
+				<div id="budget{{@key}}" style="color: orange;">Unset</div>
+				{{else}}
+				<div id="budget{{@key}}" style="color: green;">${{budget}}</div>
+				{{/unless}}
+				<img src="/css/pics/edit_icon.png" id="img{{@key}}" height="25px" width="25px" 
+				style="float: right; margin-right: 10px; margin-left: auto;">
+			</div>
+			{{/each}}
 		</div>
-		{{/each}}
+
 
 		{{!-- Pop up on clicking the edit icon  --}}		
 		<div class="budget-dialog" style="width: 250px; height: 300px;">

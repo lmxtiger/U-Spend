@@ -68,6 +68,9 @@
         width: 100%;
     } 
 </style>   
+
+    {{> facebook}}
+    <script src="/js/facebook.js"></script>
 </head> 
 
 <body>    
@@ -83,6 +86,13 @@
             <input type="password" placeholder="Enter Password" name="password" required>  
 
             <input type="checkbox"> Remember me  
+             <fb:login-button scope="public_profile,email" onlogin="window.location='./home' "
+            style="display: inline-block; float:right;">
+            </fb:login-button>
+            {{!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
+            style="display: inline-block; float:right;">
+            </fb:login-button> --}}
+
             <button type="submit">Login</button>   
             <a href="#">Forgot password?</a>   
             <a href="./signup" style="float: right;">Sign up now!</a>
@@ -90,10 +100,6 @@
             <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   
     </form>    
-
-    {{!-- <div id="signUp">
-        New to U$pend? <a href="#">SIGN UP NOW!</a>
-    </div> --}}
 
 	<script>
 		function resetAll() {

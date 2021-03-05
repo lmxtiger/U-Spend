@@ -69,12 +69,6 @@
     } 
 </style>
 
-    <!-- need changes
-    <script src="/js/facebook.js"></script>   
-    {{> facebook}}
-    <script src="/js/facebook.js"></script>
-    -->
-
 </head> 
 
 <body>    
@@ -84,37 +78,26 @@
 
     <form action="./home">  
         <div class="container">   
-            <label>Email <span>*</span> </label>   
-            <input type="email" placeholder="Enter Email" name="email" required>  
-            <label>Username <span>*</span> </label>   
-            <input type="text" placeholder="Enter Username" name="username" required>  
-            <label>Password <span>*</span> </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
-            <label>Confirm Password <span>*</span> </label>   
-            <input type="password" placeholder="Reenter Password" name="confirmPW" required>  
+            {{!-- <label>Email <span>*</span> </label>   
+            <input type="email" placeholder="Enter Email" name="email" required>   --}}
+            <label for="username">Username <span>*</span> </label>   
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>  
+
+            <label for="password">Password <span>*</span> </label>   
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>  
+
+            <label for="conf-pw">Confirm Password <span>*</span> </label>   
+            <input type="password" id="conf-pw" name="conf-pw" placeholder="Reenter Password" required>  
+
             <label>Pet Name (optional)</label>   
-            <input type="text" pattern="[A-Za-z]*" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" name="petName" maxlength="12" required>  
+            <input type="text" pattern="[A-Za-z]*" id="petName" name="petName" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" maxlength="12" required>  
+
             <button type="submit">Sign Up</button>   
             Already have an account? <a href="./">Login</a>
-
-            <!-- FB login button
-            <div class="jumbotron">
-            <p class="facebookLogin">Please login through Facebook
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
-            </p>
-
-            </div>
-            -->
-
             {{!-- onclick="location.href='./' --}} 
             <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   
     </form>    
-
-    {{!-- <div id="signUp">
-        New to U$pend? <a href="#">SIGN UP NOW!</a>
-    </div> --}}
 
 	<script>
 		function resetAll() {

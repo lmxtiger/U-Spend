@@ -22,11 +22,10 @@
 	<script src="/js/feed.js"></script>
 	<script>
 		/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-		function myFunction() {
+		{{!-- function myFunction() {
 			document.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
 		}
 
-		// Close the dropdown if the user clicks outside of it
 		window.onclick = function(e) {
 			if (!e.target.matches('.dropbtn')) {
 				var myDropdown = document.getElementsByClassName("dropdown-content")[0];
@@ -34,7 +33,7 @@
 					myDropdown.classList.remove('show');
 				}
 			}
-		}
+		} --}}
 	</script>
 </head>
 
@@ -45,13 +44,17 @@
 		</div>
 		<p class="center">U$pend</p>
 		<div class="right dropdown">
-			<button class="dropbtn">Setting
+			<button class="dropbtn">
+				<img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
 				<i class="fa fa-caret-down" style="display: inline-block;"></i>
 			</button>
 			<div class="dropdown-content">
 				<a href="./home">Home</a>
+				<hr>
 				<a href="./profile">Profile</a>
+				<hr>
 				<a href="./help">Help</a>
+				<hr>
 				<a href="./">Logout</a>
 			</div>
 		</div>

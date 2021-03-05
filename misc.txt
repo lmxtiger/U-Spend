@@ -1,0 +1,16 @@
+            {
+            "name": "dumbbells",
+            "amount": 50,
+            "category": 3,
+            "rating": 1,
+            "date": "2/11/2021"
+            }
+
+            ,
+            {
+            "name": "Lobster",
+            "amount": 50,
+            "category": 1,
+            "rating": 3,
+            "date": "1/24/2021"
+            }

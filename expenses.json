@@ -14,13 +14,6 @@
             "category": 1,
             "rating": 4,
             "date": "1/31/2021"
-            },
-            {
-            "name": "Lobster",
-            "amount": 50,
-            "category": 1,
-            "rating": 3,
-            "date": "1/24/2021"
             }
         ],
        
@@ -41,13 +34,6 @@
             "category": 3,
             "rating": 5,
             "date": "2/13/2021"
-            },
-            {
-            "name": "dumbbells",
-            "amount": 50,
-            "category": 3,
-            "rating": 1,
-            "date": "2/11/2021"
             }
         ],
 
@@ -130,13 +116,6 @@
         "date": "2/13/2021"
         },
         {
-        "name": "dumbbells",
-        "amount": 50,
-        "category": "Fitness",
-        "rating": 1,
-        "date": "2/11/2021"
-        },
-        {
         "name": "Hollister sweater",
         "amount": 60,
         "category": "Clothings",
@@ -149,13 +128,6 @@
         "category": "Dining",
         "rating": 4,
         "date": "1/31/2021"
-        },
-        {
-        "name": "Lobster",
-        "amount": 50,
-        "category": "Dining",
-        "rating": 3,
-        "date": "1/24/2021"
         }
     ]
 }

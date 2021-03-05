@@ -40,13 +40,13 @@ function initFeedGesture() {
             //     } 
             // );
         function updateCountUI(res) {
-            var str = $('strong').html();
+            var str = $('#countBurger strong').html();
             var num = parseInt(str.split(' ')[1]);
             // console.log("num of burgers: " + num);
             var alertMSG = num>0 ? "Feeded!" : "Oops! You have no burger left!";
             alert(alertMSG);
             num = Math.max(--num, 0);
-            $('strong').html(": " + num);
+            $('#countBurger strong').html(": " + num);
         }
     });
 }

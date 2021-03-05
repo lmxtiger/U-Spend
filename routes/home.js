@@ -24,10 +24,10 @@ exports.feed = function(req, res) {
 }
 
 exports.login_profile = function(req, res) {
-	var fb_profile_url = req.body.profile_url;
-	console.log(fb_profile_url);
-	if(fb_profile_url != "") {
-		burger_num.profile_url = fb_profile_url;
+	var fb_whole_name = req.body.fb_whole_name;
+	console.log(fb_whole_name);
+	if(fb_whole_name != "") {
+		burger_num.fb_whole_name = fb_whole_name;
 	}
-	res.send(fb_profile_url);
+	res.send(fb_whole_name);
 }

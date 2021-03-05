@@ -23,7 +23,7 @@ function statusChangeCallback(response) {
 function changeUser(response) {
 	console.log(response.name);
 	$.post("login_profile",
-		{profile_url: response.name},
+		{fb_whole_name: response.name},
 		postLogin);
 	window.location = './home';
 }

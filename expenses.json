@@ -61,7 +61,7 @@
     "categories": {
         "Dining": {
             "budget": false,
-            "spent": 78,
+            "spent": 28,
             "id": 0
         },
         "Clothings": {
@@ -71,7 +71,7 @@
         },
         "Fitness": {
             "budget": false,
-            "spent": 90,
+            "spent": 40,
             "id": 2
         },
         "Study": {

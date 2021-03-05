@@ -50,6 +50,7 @@ app.get('/', index.view);
 app.get('/signup', signup.view);
 app.get('/home', home.view);
 app.post('/feed', home.feed);
+app.post('/login_profile', home.login_profile);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
 app.post('/overHistNew', overHist.overHistNew);

@@ -68,7 +68,8 @@
         width: 100%;
     } 
 </style>   
-
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
     {{> facebook}}
     <script src="/js/facebook.js"></script>
 </head> 
@@ -88,6 +89,7 @@
             <input type="checkbox"> Remember me  
              <fb:login-button scope="public_profile,email" onlogin="window.location='./home' "
             style="display: inline-block; float:right;">
+            {{!-- window.location='./home' --}}
             </fb:login-button>
             {{!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
             style="display: inline-block; float:right;">

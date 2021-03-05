@@ -45,7 +45,7 @@ p.center {
     border: 2px solid blue;
   } */
 
-  
+
 /* top navbar */
 .dropdown {
     float: right;
@@ -62,7 +62,8 @@ p.center {
     color: black;
     /* padding: 14px 16px; */
     background-color: #ffcb91;
-    border: 2px solid #66b8ff;
+    border: 2px solid #ffcb91;
+    /* #66b8ff; */
     font-family: inherit;
     margin-right: 15px;
     height: 100%;

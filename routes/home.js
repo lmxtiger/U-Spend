@@ -22,3 +22,12 @@ exports.feed = function(req, res) {
 	}
 	res.send(feedSignal);
 }
+
+exports.login_profile = function(req, res) {
+	var fb_profile_url = req.body.profile_url;
+	if(fb_profile_url != "") {
+		burger_num.profile_url = fb_profile_url;
+		console.log(burger_num.profile_url);
+	}
+	res.send(fb_profile_url);
+}

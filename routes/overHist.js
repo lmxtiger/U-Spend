@@ -10,10 +10,6 @@ function addToArray(objects, arr) {
     return arr;
 }
 
-function compareDate(item1, item2) {
-    
-}
-
 // Render overHist screen
 exports.view = function(req, res){
     // var all_expenses = [];

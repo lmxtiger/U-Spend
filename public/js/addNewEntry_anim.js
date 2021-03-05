@@ -20,7 +20,8 @@ function initEntryForm() {
         amt_val = $("input#amount").val();
         selected_val = $( "select#categories option:selected" ).val();
         if(selected_val == "-1") {
-            cate_text = $(".container.top_info").find("input#new_cate").val(); 
+            cate_text = $(".top_info").find("input#new_cate").val(); 
+            // console.log("addNewEntry_anim.js: " + cate_text);
         }else{
             cate_text = $( "select#categories option:selected" ).text();
         }
@@ -62,7 +63,6 @@ function toggleNewCate(e) {
             $(new_all).hide().insertAfter("select#categories").fadeIn(600, function() {
                 console.log($(new_cate_input));
                 $("input#new_cate").focus();
-                // .attr("placeholder", "yes");
             });
         }
     }else{

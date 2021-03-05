@@ -87,7 +87,7 @@
             <input type="password" placeholder="Enter Password" name="password" required>  
 
             <input type="checkbox"> Remember me  
-             <fb:login-button scope="public_profile,email" onlogin="window.location='./home' "
+             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
             style="display: inline-block; float:right;">
             {{!-- window.location='./home' --}}
             </fb:login-button>

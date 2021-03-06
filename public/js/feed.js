@@ -1,7 +1,5 @@
 'use strict';
 
-// var burger_num = require("../../feed.json");
-
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();

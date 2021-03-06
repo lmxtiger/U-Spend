@@ -1,4 +1,5 @@
 var expenses = require('../expenses.json');
+var home_data = require('../home-user.json');
 
 exports.viewEachCate = function(req, res){
     var cateName = req.params.cateName;

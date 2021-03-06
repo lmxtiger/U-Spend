@@ -21,7 +21,7 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
-	console.log(response.id);
+	console.log("FB ID: " + response.id);
 	// var profile_url = "https://graph.facebook.com/{userID}?fields=picture.width(480).height(480)" 
 	$.post("login_profile",
 		{fb_whole_name: response.name,

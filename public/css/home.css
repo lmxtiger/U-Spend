@@ -37,7 +37,7 @@
     text-size-adjust: auto;
     color: black; 
     background-color: #ffcb91;
-    /* border: 2px solid rgb(13, 97, 13);  Green border */
+    border: none;
     border-radius: 15px;
     cursor: pointer; /* Pointer/hand icon */
     width: 100%;

@@ -135,7 +135,7 @@
     {{!-- bottom navbar / Overview vs History  Switch tab --}}
     <div class="tab_bar" style="width: 100%;">
        <button onclick="openTab('overview')" id="overviewBtn" 
-       style="background-color: bisque; border-right: none;">Overview</button>
+       style="background-color: #ffcb91; border-right: none;">Overview</button>
        <button onclick="openTab('history')" id="historyBtn" style="background-color: #EFEFEF;">History</button>
     </div>
    
@@ -147,16 +147,16 @@
         function openTab(tabName) {
             $(".container").hide();
             $("#" + tabName).show();
-            $("#" + tabName + "Btn").css("background-color", "bisque");
+            $("#" + tabName + "Btn").css("background-color", "#ffcb91");
             if(tabName == "overview") {
-                $("#historyBtn").css("background-color", "#EFEFEF");
+                $("#historyBtn").css("background-color", "#f0f8ff");
                 $(".parent p.center").text("Overview");
                 $(".left img").on("click", function() {
                     {{!-- var hypref = $(this).data("href"); --}}
                     location.href = "./home";
                 });
             }else{
-                $("#overviewBtn").css("background-color", "#EFEFEF");
+                $("#overviewBtn").css("background-color", "#f0f8ff");
                 $(".parent p.center").text("History");
                  $(".left img").on("click", function() {
                     {{!-- var hypref = $(this).data("href"); --}}

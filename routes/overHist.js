@@ -1,5 +1,5 @@
 var expenses = require('../expenses.json');
-var burger_num = require('../feed.json');
+var home_data = require('../home-user.json');
 
 function addToArray(objects, arr) {
     for (var cate in objects) {
@@ -41,14 +41,6 @@ exports.overHistNew = function(req, res){
     }
     expenses["history"].unshift(newEntry);
     // Increment burger count on logging a new expense
-    burger_num.burger_num++;
+    home_data.burger_num++;
     res.send(newEntry);
 };
-
-
-
-// expenses['cates-expenses'].forEach(element => {
-//     element.forEach(element => {
-
-//     })
-// });

@@ -17,7 +17,7 @@ exports.view = function(req, res){
     // console.log("# of items: " + all_expenses.length);
     res.render('overHist', 
         {"expenses": expenses,
-        "home_data": home_data}
+        "home_data": home_data} 
     );
 };
 

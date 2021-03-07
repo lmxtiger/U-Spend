@@ -2,16 +2,12 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+    $('select#categories').on('change', toggleNewCate);
+    initEntryForm();
     toggle_dropdown();
 });
 
-/*
- * Function that is called when the document is ready.
- */
-function initializePage() {
-    $('select#categories').on('change', toggleNewCate);
-    initEntryForm();
+function checkNewCate() {
 };
 
 function toggle_dropdown() {
@@ -38,11 +34,11 @@ function initEntryForm() {
         if(selected_val == "-1") {
             cate_text = $(".top_info").find("input#new_cate").val(); 
             if(checkIsDuplicate(cate_text) ) {
-                alert("Category " + cate_text + " already exists!");
+                alert("Category \"" + cate_text + "\" already exists!");
                 $(".top_info").find("input#new_cate").val("");
                 $(".top_info").find("input#new_cate").focus();
+                return false;
             }
-            // console.log("addNewEntry_anim.js: " + cate_text);
         }else{
             cate_text = $( "select#categories option:selected" ).text();
         }
@@ -61,25 +57,29 @@ function initEntryForm() {
                 rating_val: rating_val,
                 date_val: date_val},
     
-                postSubmit);
-        
-        $(this).attr("action", "./cate/"+cate_text);
+                postSubmit).done(function() {
+                    $(location).attr('href', "./cate/"+cate_text);
+                });
+
+        // $(this).attr("action", "./cate/"+cate_text);
     });
 
     function postSubmit(res) {
         alert("New spending logged! YOU GET ONE BURGER!");
-    }
-    
+        // $(location).attr('href', "./cate/"+cate_text);
+    };
+
     function checkIsDuplicate(newCateName) {
-        console.log("checkIsDuplicate");
-        var options = $('select#categories option[value!="-1" && value!="-2"]');
-        for(const option in options) {
-            if(option.text() === newCateName) {
-                return true;
+        // console.log("checkIsDuplicate");
+        var duplicate = false;
+        $('select#categories option[value!="-1"]').each(function() {
+            if($(this).text() == newCateName) {
+                duplicate = true;
+                return false; // To break from the loop
             }
-        }
-        return false;
-    }
+        });
+        return duplicate;
+    };
 }
 
 function toggleNewCate(e) {

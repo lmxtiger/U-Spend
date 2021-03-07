@@ -20,22 +20,12 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/feed.js"></script>
+	<script src="/js/home_action.js"></script>
 	<script>
-		/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-		{{!-- function myFunction() {
-			document.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
-		}
 
-		window.onclick = function(e) {
-			if (!e.target.matches('.dropbtn')) {
-				var myDropdown = document.getElementsByClassName("dropdown-content")[0];
-				if (myDropdown.classList.contains('show')) {
-					myDropdown.classList.remove('show');
-				}
-			}
-		} --}}
 	</script>
+	{{> facebook}}
+    <script src="/js/facebook.js"></script>
 </head>
 
 <body>
@@ -45,17 +35,17 @@
 		</div>
 		<p class="center">U$pend</p>
 		<div class="right dropdown">
-			<button class="dropbtn">
+			<button id="dropbtn">
 				<img src="{{fb_profile_url}}" alt="profile pic" height="40px" width="40px">
 				<i class="fa fa-caret-down" style="display: inline-block;"></i>
 			</button>
 			<div class="dropdown-content">
 				<a href="./home">Home</a>
-				<hr>
+				{{!-- <hr> --}}
 				<a href="./profile">Profile</a>
-				<hr>
+				{{!-- <hr> --}}
 				<a href="./help">Help</a>
-				<hr>
+				{{!-- <hr> --}}
 				<a href="./">Logout</a>
 			</div>
 		</div>
@@ -64,6 +54,28 @@
 	{{!-- bg pic  --}}
 	<div class="bg_img">
 		<p style="font-size: 18px; padding: 10px 15px 10px";> Track your everyday spending and win gifts! <p>
+
+		<script>
+		{{!-- function FBlogout(){
+			FB.getLoginStatus(function(response) {
+				if(response && response.status === 'unknown') {
+					var accessToken = response.authResponse.accessToken;
+					FB.logout();
+					console.log("Trying to log out!");
+					window.location = './';
+				}
+			});
+		} --}}
+		</script>
+
+		{{!-- <span id="fbLogout" onclick="FBlogout()" style="margin: auto;">
+			<a class="fb_button fb_button_medium">
+				<span class="fb_button_text">Logout</span>
+			</a>
+		</span> --}}
+
+		{{!-- <fb:login-button autologoutlink="true" style="display: inline-block; margin: auto;">
+		</fb:login-button> --}}
 
 		<div class="btn">
 			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>

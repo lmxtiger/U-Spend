@@ -60,27 +60,27 @@
 
     "categories": {
         "Dining": {
-            "budget": false,
+            "budget": 200,
             "spent": 28,
             "id": 0
         },
         "Clothings": {
-            "budget": false,
+            "budget": 200,
             "spent": 60,
             "id": 1
         },
         "Fitness": {
-            "budget": false,
+            "budget": 200,
             "spent": 40,
             "id": 2
         },
         "Study": {
-            "budget": false,
+            "budget": 100,
             "spent": 15,
             "id": 3
         },
         "Electronics": {
-            "budget": false,
+            "budget": 1200,
             "spent": 950,
             "id": 4
         }

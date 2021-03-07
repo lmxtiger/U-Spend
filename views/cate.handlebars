@@ -20,6 +20,7 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/cate_action.js"></script>
 </head>
 
 <body>
@@ -29,17 +30,17 @@
         </div>
         <p class="center">{{cateName}}</p>
         <div class="right dropdown">
-            <button class="dropbtn">
-                <img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
+            <button id="dropbtn">
+                <img src="{{home_data.fb_profile_url}}" height="40px" width="40px">
                 <i class="fa fa-caret-down" style="display: inline-block;"></i>
             </button>
             <div class="dropdown-content">
                 <a href="../home">Home</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="../profile">Profile</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="../help">Help</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="../">Logout</a>
             </div>
         </div>

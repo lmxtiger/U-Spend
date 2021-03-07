@@ -3,7 +3,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-})
+    toggle_dropdown();
+});
 
 /*
  * Function that is called when the document is ready.
@@ -11,20 +12,43 @@ $(document).ready(function() {
 function initializePage() {
     $('select#categories').on('change', toggleNewCate);
     initEntryForm();
-}
+};
+
+function toggle_dropdown() {
+    // $( "#dropbtn" ).click(function() {
+    //     console.log("Clicked");
+    //     $( "div.dropdown-content" ).slideToggle();
+    // });
+
+    $(window).click(function(e) {
+        var target = $(e.target);
+    	if (target.is("#dropbtn") || target.parent().is("#dropbtn") ) {
+            $( "div.dropdown-content" ).slideToggle();
+    	}else{
+            $( "div.dropdown-content" ).slideUp();
+        }   
+    });
+};
 
 function initEntryForm() {
     $("#newEntryForm").submit(function(e) {
         var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
-        name_val = $("input#name").val();
-        amt_val = $("input#amount").val();
+
         selected_val = $( "select#categories option:selected" ).val();
         if(selected_val == "-1") {
             cate_text = $(".top_info").find("input#new_cate").val(); 
+            if(checkIsDuplicate(cate_text) ) {
+                alert("Category " + cate_text + " already exists!");
+                $(".top_info").find("input#new_cate").val("");
+                $(".top_info").find("input#new_cate").focus();
+            }
             // console.log("addNewEntry_anim.js: " + cate_text);
         }else{
             cate_text = $( "select#categories option:selected" ).text();
         }
+
+        name_val = $("input#name").val();
+        amt_val = $("input#amount").val();
         var in_date = new Date();
         date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
         rating_val = $( "input[name='rating']:checked" ).val();
@@ -41,15 +65,26 @@ function initEntryForm() {
         
         $(this).attr("action", "./cate/"+cate_text);
     });
-   
+
     function postSubmit(res) {
         alert("New spending logged! YOU GET ONE BURGER!");
+    }
+    
+    function checkIsDuplicate(newCateName) {
+        console.log("checkIsDuplicate");
+        var options = $('select#categories option[value!="-1" && value!="-2"]');
+        for(const option in options) {
+            if(option.text() === newCateName) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
 function toggleNewCate(e) {
     var selected_val = $( "select#categories option:selected" ).val();
-    console.log(selected_val);
+    // console.log(selected_val);
     var new_cate = $(".container.top_info").find(".new_cate"); 
     // console.log(new_cate);
     if(selected_val == "-1") {

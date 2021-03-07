@@ -32,24 +32,24 @@
         </div>
         <p class="center">New Expense</p>
         <div class="right dropdown">
-            <button class="dropbtn">
-                <img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
+            <button id="dropbtn">
+                <img src="{{home_data.fb_profile_url}}" height="40px" width="40px">
                 <i class="fa fa-caret-down" style="display: inline-block;"></i>
             </button>
             <div class="dropdown-content">
                 <a href="./home">Home</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./profile">Profile</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./help">Help</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./">Logout</a>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <form id="newEntryForm" method="get"></form>
+        <form id="newEntryForm"></form>
     
         <div class="top_info" style="max-width: 900px; margin-top: 15px;">
 
@@ -60,14 +60,15 @@
 
             {{!-- Drop-down list of current categories --}}
             <label for="categories">Category</label>
-            {{!-- <input list="categories" id="category" name="category" placeholder="New Category?"> --}}
+            {{#with expenses}}
             <select id="categories" name="category" form="newEntryForm">
-                <option value="0" disabled>Select Category:</option>
+                <option value="-2" disabled>Select Category:</option>
                 {{#each categories}}
                     <option value="{{id}}">{{@key}}</option>
                 {{/each}}
                 <option value="-1">+ New Category</option>
             </select>
+            {{/with}}
 
             {{!-- Amount --}}
             <label for="amount">Amount</label>

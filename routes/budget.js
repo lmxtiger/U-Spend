@@ -2,7 +2,10 @@ var expenses = require('../expenses.json');
 var home_data = require('../home-user.json');
 
 exports.view = function(req, res){
-    res.render('budget', expenses);
+    res.render('budget', 
+        {"expenses": expenses,
+        "home_data": home_data}
+    );
 };
 
 exports.budgetNew = function(req, res) {

@@ -9,7 +9,9 @@ exports.viewEachCate = function(req, res){
     var res_render = {
         "cateName": cateName,
         "budget_spent": budget_spent,
-        "exp_list": exp_list
+        "exp_list": exp_list,
+        "home_data": home_data
     }
+    console.log("cate.js: " + res_render.home_data.fb_profile_url);
     res.render('cate', res_render);
 };

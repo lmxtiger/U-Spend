@@ -19,6 +19,7 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/overHist_action.js"></script>
 
     {{!-- Google 3D PIECHART  --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -64,17 +65,17 @@
         </div>
         <p class="center">Overview</p>
         <div class="right dropdown">
-            <button class="dropbtn">
-                <img src="/css/pics/empty_profile_icon.png" height="40px" width="40px">
+            <button id="dropbtn">
+                <img src="{{home_data.fb_profile_url}}" height="40px" width="40px">
                 <i class="fa fa-caret-down" style="display: inline-block;"></i>
             </button>
             <div class="dropdown-content">
                 <a href="./home">Home</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./profile">Profile</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./help">Help</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./">Logout</a>
             </div>
         </div>
@@ -88,6 +89,7 @@
             <div id="piechart"></div>
         </div>
 
+        {{#with expenses}}
         {{!-- hidden element: [category, total spent] --}}
         <div style="display: none;">
             {{#each categories}}
@@ -106,11 +108,13 @@
             </div>
             {{/each}}
         </div>
+        {{/with}}
     </div>
 
     <div class="container" id="history" 
     style="display: none; margin-bottom: 55px;">
 
+        {{#with expenses}}
         <div class="all-items">
             {{#each history}}
             <div class="each-item" style="padding-left: 10px;">
@@ -130,6 +134,7 @@
             {{/each}}
             {{/each}} --}}
         </div>
+        {{/with}}
     </div>
 
     {{!-- bottom navbar / Overview vs History  Switch tab --}}

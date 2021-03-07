@@ -17,7 +17,7 @@ function statusChangeCallback(response) {
 		console.log('Successfully logged in with Facebook');
 		FB.api('/me?fields=name, first_name, picture.width(480).height(480)', changeUser);
 	}
-	// 
+	
 }
 
 function changeUser(response) {
@@ -40,14 +40,4 @@ function postLogin() {
 //     $("img#photo").attr('src', response.picture.data.url);
 // }
 
-/* response */
-// {
-//     status: 'connected',
-//     authResponse: {
-//         accessToken: '...',
-//         expiresIn:'...',
-//         signedRequest:'...',
-//         userID:'...'
-//     }
-// }
 

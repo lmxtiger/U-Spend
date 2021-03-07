@@ -54,7 +54,7 @@ p.center {
     height: 59px;
   }
   
-.dropdown .dropbtn {
+.dropdown #dropbtn {
     float: right;
     font-size: 16px;  
     border: none;
@@ -69,7 +69,7 @@ p.center {
     height: 100%;
 }
 
-.dropdown:hover .dropbtn, .dropbtn:focus {
+.dropdown:hover #dropbtn, #dropbtn:focus {
     /* background-color: red; */
 }
 
@@ -96,24 +96,25 @@ p.center {
     width: 100px;
     height: 40px;
     color: black;
-    padding: 5px 10px;
+    padding: 7px 10px 5px;
     text-decoration: none;
     display: block;
     text-align: center;
+    font-size: 18px;
+}
+
+.dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid black;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: lightgreen;
 }
 
-.dropbtn:hover {
-    /* background-color: red; */
-}
-
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
     display: block;
 }
 
 .show {
     display: block;
-}
+} */

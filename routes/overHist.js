@@ -15,7 +15,10 @@ exports.view = function(req, res){
     // var all_expenses = [];
     // all_expenses = addToArray(expenses['cates-expenses'], all_expenses);
     // console.log("# of items: " + all_expenses.length);
-    res.render('overHist', expenses);
+    res.render('overHist', 
+        {"expenses": expenses,
+        "home_data": home_data}
+    );
 };
 
 // Insert new entry into expenses.json

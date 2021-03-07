@@ -20,6 +20,7 @@
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/profile_action.js"></script>
 </head>
 
 <body>
@@ -29,17 +30,17 @@
         </div>
         <p class="center">Profile</p>
         <div class="right dropdown">
-            <button class="dropbtn">
+            <button id="dropbtn">
                 <img src="{{fb_profile_url}}" height="40px" width="40px">
                 <i class="fa fa-caret-down" style="display: inline-block;"></i>
             </button>
             <div class="dropdown-content">
                 <a href="./home">Home</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./profile">Profile</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./help">Help</a>
-                <hr>
+                {{!-- <hr> --}}
                 <a href="./">Logout</a>
             </div>
         </div>
@@ -48,7 +49,8 @@
     <div class="container">
         
         <div class="profile">
-            <img src="{{fb_profile_url}}" alt="profile picture" class="profile-img">
+            <img src="{{fb_profile_url}}" alt="profile picture" id="profile-img" 
+            style="width: 120px; height: 120px; margin-top: 20px; border: 5px solid #ffcb91;">
             <h2>{{fb_whole_name}}</h2>
             <h4>Pet name: Foxy Doggy</h4>
             <div>

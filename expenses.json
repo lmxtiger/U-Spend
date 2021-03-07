@@ -60,7 +60,7 @@
 
     "categories": {
         "Dining": {
-            "budget": 200,
+            "budget": false,
             "spent": 28,
             "id": 0
         },

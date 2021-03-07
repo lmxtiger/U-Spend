@@ -84,9 +84,16 @@
 			style="width: 100%; height: 40px;">
 		</div>
 
-		{{!-- <input type="submit" value="Yes" class="budgetBtn" style="float: left;"
-		form="newEntryForm" onclick="setNewBudgets()">
-		<button class="budgetBtn" style="float: right;" onclick="resetAll()">Cancel</button> --}}
+		<button id="new-cate-btn">New Category</button>
+
+		{{!-- Pop up on clicking button "New Category"  --}}
+		<div class="new-dialog" style="width: 250px; height: auto;">
+			<label for="new-name">Name</label>
+			<input type="text" name="new-name" id="new-name" required style="margin-bottom: 10px;">
+			<label for="new-budget">Budget</label>
+			<input type="number" step="any" name="new-budget" id="new-budget" value=""
+			placeholder="At least $10; up to $40k" min="10" max="40000">
+		</div>
 	</div>
 	
 	<script>

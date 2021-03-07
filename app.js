@@ -56,6 +56,7 @@ app.get('/overHist', overHist.view);
 app.post('/overHistNew', overHist.overHistNew);
 app.get('/budget', budget.view);
 app.post('/budgetNew', budget.budgetNew);
+app.post('/cateNew', budget.cateNew);
 app.get('/help', help.view);
 app.get('/profile', profile.view);
 app.get('/cate/:cateName', cate.viewEachCate);

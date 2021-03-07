@@ -15,3 +15,18 @@ exports.budgetNew = function(req, res) {
     expenses.categories[cateName].budget = cateBudget;
     res.send(expenses.categories.cateName);
 };
+
+exports.cateNew = function(req, res) {
+    var newName = req.body.cateName;
+    var newBudget = req.body.budget;
+    console.log("budget.js: " + newBudget);
+    newBudget = newBudget == 0 ? false : newBudget;
+    var newCate = {
+        "budget": newBudget,
+        "spent": 0,
+        "id": Object.keys(expenses.categories).length
+    };
+    expenses.categories[newName] = newCate;
+    expenses['cates-expenses'][newName] = [];
+    res.send(expenses.categories.newName);
+};

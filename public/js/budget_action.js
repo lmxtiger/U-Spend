@@ -2,16 +2,12 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+	initBudgetEdit();
+    initBudgetNew();
     toggle_dropdown();
 });
 
 function toggle_dropdown() {
-    // $( "#dropbtn" ).click(function() {
-    //     console.log("Clicked");
-    //     $( "div.dropdown-content" ).slideToggle();
-    // });
-
     $(window).click(function(e) {
         var target = $(e.target);
     	if (target.is("#dropbtn") || target.parent().is("#dropbtn") ) {
@@ -22,10 +18,64 @@ function toggle_dropdown() {
     });
 }
 
-/*
- * Function that is called when the document is ready.
- */
-function initializePage() {
+function initBudgetNew() {
+    $(function() {
+        var dialog = $( "div.new-dialog" ).dialog({
+            autoOpen: false,
+            modal: true,
+        });
+
+        function postNewCate(budget, name) {
+            alert("New Category created!");
+            location.reload();
+        }
+
+        $('button#new-cate-btn').click(function() {
+            $('div.new-dialog #new-name').focus();
+            dialog.dialog('option', {
+                'title': "New Category",
+                'buttons': [
+                    {
+                        text: "Create",
+                        click: function() {
+                            var name = $( "div.new-dialog #new-name" ).val();
+                            var budget = $( "div.new-dialog #new-budget" ).val();
+                            if(budget == "") {
+                                $.post('CateNew', 
+                                {
+                                    "cateName": name,
+                                    "budget": 0
+                                }, postNewCate(budget, name));
+                                dialog.dialog( "close" );
+                            }else if( parseFloat(budget) >= 10 && parseFloat(budget) <= 40000 ) {
+                                $.post('CateNew', 
+                                {
+                                    "cateName": name,
+                                    "budget": budget
+                                }, postNewCate(budget, name));
+                                dialog.dialog( "close" );
+                            }else{
+                                alert("Please enter a valid budget or skip for now!");
+                                $( "div.new-dialog #new-name" ).val(name);
+                                $( "div.new-dialog #new-budget" ).val("");
+                                $( "div.new-dialog #new-budget" ).focus();
+                            }
+                        }
+                    },
+                    {
+                        text: "CANCEL",
+                        click: function() {
+                            dialog.dialog( "close" );
+                        }
+                    }
+                ]
+            });
+            dialog.dialog( "open" );
+        });
+    });
+};
+
+function initBudgetEdit() {
     $(function() {
         function setBudget(cateName) {
             var budget = $( "div.budget-dialog input" ).val();
@@ -45,7 +95,6 @@ function initializePage() {
             $('#budget' + category).css("color", "green");
             alert("Budget = $" + budget + " for Category = " + category + " successfully set!");
         }
-
 
         var dialog = $( "div.budget-dialog" ).dialog({
             autoOpen: false,

@@ -11,21 +11,23 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	{{!-- <link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	{{!-- My CSS  --}}
     <link href="/css/top-navbar.css" rel="stylesheet" type="text/css">
 	<link href="css/overHist.css" rel="stylesheet" type="text/css">
 
 	{{!-- enable JQuery --}}
-	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/overHist_action.js"></script>
 
     {{!-- Google 3D PIECHART  --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
         var cate_spent_arr = [
@@ -98,7 +100,14 @@
             {{/each}}
         </div>
  
-        <p id="above-all-cates">All Categories</p>
+        {{!-- Question mark on click: Display what the colored progress bar means  --}}
+        <p id="above-all-cates" style="width: fit-content;">All Categories</p>
+        <img id="question-mark" src="/css/pics/question-mark-icon.jpg"> 
+
+        <div id="dialog" title="Colored Progress Bar?" 
+        style="width: 250px; height: auto;">
+            <p>The colored "progress bar" for each category indicates how much budget of that category has been spent!</p>
+        </div>
 
         <div class="all-cates">
             {{#each cates-expenses}}

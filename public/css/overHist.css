@@ -17,8 +17,17 @@ div#history {
 p#above-all-cates {
     font-size: 18px; 
     font-weight: bold; 
-    margin: 15px auto 5px;
-    /* padding-left: 24px; */
+    margin: 15px 0px 5px;
+    width: fit-content;
+    display: inline-block;
+}
+
+img#question-mark {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .all-cates {
@@ -83,8 +92,8 @@ p#above-all-cates {
     bottom: 0;
     left: 0;
     /* width: 50%; */
-    background-color: lightcoral;
-    opacity: 0.6;
+    background-color: red;
+    opacity: 0.5;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     /* z-index: -1; */

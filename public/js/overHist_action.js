@@ -4,7 +4,29 @@
 $(document).ready(function() {
     toggle_dropdown();
     adjustCateProgBar();
-})
+    displayQMDialog();
+});
+
+function displayQMDialog() {
+    $(function() {
+        var dialog = $("div#dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: [
+                {
+                    text: "Close",
+                    click: function() {
+                        dialog.dialog( "close" );
+                    }
+                }
+            ]
+        });
+
+        $("img#question-mark").click(function() {
+            dialog.dialog("open");
+        });
+    });
+};
 
 function toggle_dropdown() {
     // $( "#dropbtn" ).click(function() {
@@ -37,11 +59,13 @@ function postGet(data) {
             // console.log(cateName + " inPercent: " + inPercent);
             $(this).width(inPercent + "%");
             if(inPercent === 100) {
-                $(this).css(
-                    {"background-color": "red",
-                    "border-top-right-radius": "8px",
-                    "border-bottom-right-radius": "8px"}
-                );
+                $(this).width("0px");
+                $(this).parent().css("background-color", "red");
+                // $(this).css(
+                //     {"background-color": "red",
+                //     "border-top-right-radius": "8px",
+                //     "border-bottom-right-radius": "8px"}
+                // );
             }
         }else{
             $(this).width("0px");

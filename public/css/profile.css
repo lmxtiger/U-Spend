@@ -43,6 +43,10 @@ body{
   line-height: 20pt;
 }
 
+#email-pw input {
+	display: inline-block;
+}
+
  /* Styles for demonstration */
   /* .parent {
     padding: 5px;
@@ -58,3 +62,4 @@ body{
     padding: 3px;
     border: 2px solid blue;
   } */
+

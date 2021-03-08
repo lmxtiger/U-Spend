@@ -53,6 +53,7 @@ app.post('/feed', home.feed);
 app.post('/login_profile', home.login_profile);
 app.get('/addNewEntry', addNewEntry.addNewEntry);
 app.get('/overHist', overHist.view);
+app.get('/overHistProgBar', overHist.overHistProgBar);
 app.post('/overHistNew', overHist.overHistNew);
 app.get('/budget', budget.view);
 app.post('/budgetNew', budget.budgetNew);

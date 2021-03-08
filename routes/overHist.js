@@ -21,6 +21,10 @@ exports.view = function(req, res){
     );
 };
 
+exports.overHistProgBar = function(req, res) {
+    res.json(expenses.categories);
+};
+
 // Insert new entry into expenses.json
 exports.overHistNew = function(req, res){
     var cate = req.body.cate;

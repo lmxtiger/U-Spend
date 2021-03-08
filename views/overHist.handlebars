@@ -103,7 +103,8 @@
         <div class="all-cates">
             {{#each cates-expenses}}
             <div class="each-cate" onclick="location.href='./cate/{{@key}}' ">
-                <div>{{@key}}</div>
+                <p>{{@key}}</p>
+                <div class="progress-bar"></div>
                 <img src="css/pics/right-arrow.png" alt="go to each category arrow">
             </div>
             {{/each}}

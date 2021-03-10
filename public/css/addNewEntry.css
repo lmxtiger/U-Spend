@@ -117,10 +117,10 @@ form.amp-form-submit-error [submit-error] {
     color: red;
 }
 
-div#dialog {
+div#dialog, div#dialog-warning {
     width: 100% !important; 
-    height: 75px !important; 
-    text-align:center !important;
+    height: 75px; 
+    text-align:center;
     display:flex;
     align-items: center;
     justify-content: center;

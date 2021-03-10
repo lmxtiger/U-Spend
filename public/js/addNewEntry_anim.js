@@ -25,6 +25,8 @@ function toggle_dropdown() {
 
 function initEntryForm() {
     $(function() {
+        var exceedBudget;
+
         var dialog = $( "div#dialog" ).dialog({
             autoOpen: false,
             modal: true,
@@ -34,8 +36,14 @@ function initEntryForm() {
             // show: {effect: "bounce", times: 1, distance: 1}
         });
 
+        var dialog_warning = $( "div#dialog-warning" ).dialog({
+            autoOpen: false,
+            modal: true,
+            height: "auto",
+            width: 250,
+        });
+
         $("button[value=Add]").click(function() {
-            // dialog.dialog("open");
 
             var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
     
@@ -54,6 +62,12 @@ function initEntryForm() {
     
             name_val = $("input#name").val();
             amt_val = $("input#amount").val();
+
+            if(selected_val == "-1") exceedBudget = false;
+            else $.get('./overHistProgBar', function(data) {
+                postGet(data, cate_text, amt_val);
+            });
+
             var in_date = new Date();
             date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
             rating_val = $( "input[name='rating']:checked" ).val();
@@ -70,6 +84,18 @@ function initEntryForm() {
                 ]
             });
 
+            dialog_warning.dialog("option", {
+                "buttons": [
+                    {
+                        text: "Yes I will",
+                        click: function() {
+                            dialog.dialog( "close" );
+                            $(location).attr('href', "./cate/"+cate_text);
+                        }
+                    }
+                ]
+            });
+
             $.post('overHistNew', 
         
                     {name_val: name_val,
@@ -78,7 +104,9 @@ function initEntryForm() {
                     rating_val: rating_val,
                     date_val: date_val},
         
-                    postSubmit);
+                    function(response) {
+                        postSubmit(response, exceedBudget);
+                    });
                     // .done(function() {
                     //     // dialog.dialog("open");
                     //     // $(location).attr('href', "./cate/"+cate_text);
@@ -87,9 +115,25 @@ function initEntryForm() {
             // $(this).attr("action", "./cate/"+cate_text);
         });
     
-        function postSubmit(res) {
-            dialog.dialog("open");
+        function postSubmit(response, exceedBudget) {
+            if(exceedBudget) dialog_warning.dialog("open");
+            else dialog.dialog("open");
             // alert("New spending logged! YOU GET ONE BURGER!");
+        };
+
+        function postGet(data, cate_text, amt_val) {
+            var cateBudget = data[cate_text].budget;
+            if(cateBudget == false) {
+                exceedBudget = false;
+                return;
+            }
+            var cateSpent = data[cate_text].spent;
+            // console.log(typeof(cateBudget));
+            // console.log(typeof(cateSpent));
+            // console.log(typeof(amt_val));
+            exceedBudget =  (cateSpent + parseFloat(amt_val) > cateBudget) ? true : false;
+            console.log("exceedBudget: " + exceedBudget);
+            return;
         };
     
         function checkIsDuplicate(newCateName) {

@@ -7,9 +7,6 @@ $(document).ready(function() {
     toggle_dropdown();
 });
 
-function checkNewCate() {
-};
-
 function toggle_dropdown() {
     // $( "#dropbtn" ).click(function() {
     //     console.log("Clicked");
@@ -27,65 +24,93 @@ function toggle_dropdown() {
 };
 
 function initEntryForm() {
-    $("#newEntryForm").submit(function(e) {
-        var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
+    $(function() {
+        var dialog = $( "div#dialog" ).dialog({
+            autoOpen: false,
+            modal: true,
+            height: "auto",
+            width: 250,
+            // hide: {effect: "bounce", times: 1, distance: 1},
+            // show: {effect: "bounce", times: 1, distance: 1}
+        });
 
-        selected_val = $( "select#categories option:selected" ).val();
-        if(selected_val == "-1") {
-            cate_text = $(".top_info").find("input#new_cate").val(); 
-            if(checkIsDuplicate(cate_text) ) {
-                alert("Category \"" + cate_text + "\" already exists!");
-                $(".top_info").find("input#new_cate").val("");
-                $(".top_info").find("input#new_cate").focus();
-                return false;
+        $("button[value=Add]").click(function() {
+            // dialog.dialog("open");
+
+            var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
+    
+            selected_val = $( "select#categories option:selected" ).val();
+            if(selected_val == "-1") {
+                cate_text = $(".top_info").find("input#new_cate").val(); 
+                if(checkIsDuplicate(cate_text) ) {
+                    alert("Category \"" + cate_text + "\" already exists!");
+                    $(".top_info").find("input#new_cate").val("");
+                    $(".top_info").find("input#new_cate").focus();
+                    return false;
+                }
+            }else{
+                cate_text = $( "select#categories option:selected" ).text();
             }
-        }else{
-            cate_text = $( "select#categories option:selected" ).text();
-        }
+    
+            name_val = $("input#name").val();
+            amt_val = $("input#amount").val();
+            var in_date = new Date();
+            date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
+            rating_val = $( "input[name='rating']:checked" ).val();
+        
+            dialog.dialog("option", {
+                "buttons": [
+                    {
+                        text: "YES",
+                        click: function() {
+                            dialog.dialog( "close" );
+                            $(location).attr('href', "./cate/"+cate_text);
+                        }
+                    }
+                ]
+            });
 
-        name_val = $("input#name").val();
-        amt_val = $("input#amount").val();
-        var in_date = new Date();
-        date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
-        rating_val = $( "input[name='rating']:checked" ).val();
+            $.post('overHistNew', 
+        
+                    {name_val: name_val,
+                    amt_val: amt_val,
+                    cate: [selected_val, cate_text],
+                    rating_val: rating_val,
+                    date_val: date_val},
+        
+                    postSubmit);
+                    // .done(function() {
+                    //     // dialog.dialog("open");
+                    //     // $(location).attr('href', "./cate/"+cate_text);
+                    // });
     
-        $.post('overHistNew', 
+            // $(this).attr("action", "./cate/"+cate_text);
+        });
     
-                {name_val: name_val,
-                amt_val: amt_val,
-                cate: [selected_val, cate_text],
-                rating_val: rating_val,
-                date_val: date_val},
+        function postSubmit(res) {
+            dialog.dialog("open");
+            // alert("New spending logged! YOU GET ONE BURGER!");
+        };
     
-                postSubmit).done(function() {
-                    $(location).attr('href', "./cate/"+cate_text);
-                });
-
-        // $(this).attr("action", "./cate/"+cate_text);
+        function checkIsDuplicate(newCateName) {
+            // console.log("checkIsDuplicate");
+            var duplicate = false;
+            $('select#categories option[value!="-1"]').each(function() {
+                if($(this).text() == newCateName) {
+                    duplicate = true;
+                    return false; // To break from the loop
+                }
+            });
+            return duplicate;
+        };
     });
 
-    function postSubmit(res) {
-        alert("New spending logged! YOU GET ONE BURGER!");
-        // $(location).attr('href', "./cate/"+cate_text);
-    };
-
-    function checkIsDuplicate(newCateName) {
-        // console.log("checkIsDuplicate");
-        var duplicate = false;
-        $('select#categories option[value!="-1"]').each(function() {
-            if($(this).text() == newCateName) {
-                duplicate = true;
-                return false; // To break from the loop
-            }
-        });
-        return duplicate;
-    };
 }
 
 function toggleNewCate(e) {
     var selected_val = $( "select#categories option:selected" ).val();
     // console.log(selected_val);
-    var new_cate = $(".container.top_info").find(".new_cate"); 
+    var new_cate = $(".top_info").find(".new_cate"); 
     // console.log(new_cate);
     if(selected_val == "-1") {
         if(new_cate.length == 0) {

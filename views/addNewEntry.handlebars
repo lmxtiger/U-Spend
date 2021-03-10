@@ -10,14 +10,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     {{!-- <link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     {{!-- My CSS  --}}
     <link href="/css/top-navbar.css" rel="stylesheet" type="text/css">
 	<link href="css/addNewEntry.css" rel="stylesheet">
 
     {{!-- enable JQuery --}}
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/addNewEntry_anim.js"></script>
    
     {{!-- JS support for giving star rating --}}
@@ -137,23 +139,34 @@
             <br>
 
             <button class="addNewEntryBtn" style="float: left;" onclick="resetAll()">Reset</button>
-            <button type="submit" value="Add" class="addNewEntryBtn" style="float: right;"
-            form="newEntryForm">Add</button>
+            <button type="button" value="Add" class="addNewEntryBtn" style="float: right;">Add</button>
+
+            <div id="dialog" title="New Expense Added!">
+                <img src="/css/pics/burger.png" alt="Burger Image" height="40px" width="40px" style="display:inline-block; vertical-align:middle;"> 
+                <p> + 1</p>
+            </div>
+            <style>
+                div#dialog p {
+                    color: orange; 
+                    display:inline-block; 
+                    font-weight:bold; 
+                    font-size: 28px;
+                    line-height:40px; 
+                    margin-bottom:0;
+                    margin-left: 10px;
+                    vertical-align:middle;
+                }
+            </style>
 
         </div>
     </div>
 
 
-        <script>
-        function resetAll() {
-            location.reload(); 
-        }
-
-        function redirectToCate() {
-            {{!-- var selected_text = $( "select#categories option:selected" ).text();
-            alert("Work in Progress!"); --}}
-        }
-        </script>
+    <script>
+    function resetAll() {
+        location.reload(); 
+    }
+    </script>
 
 </body>
 

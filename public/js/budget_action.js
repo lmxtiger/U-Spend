@@ -23,6 +23,8 @@ function initBudgetNew() {
         var dialog = $( "div.new-dialog" ).dialog({
             autoOpen: false,
             modal: true,
+            hide: {effect: "bounce", times: 1, distance: 1},
+            show: {effect: "bounce", times: 1, distance: 1}
         });
 
         function postNewCate(budget, name) {
@@ -40,25 +42,30 @@ function initBudgetNew() {
                         click: function() {
                             var name = $( "div.new-dialog #new-name" ).val();
                             var budget = $( "div.new-dialog #new-budget" ).val();
-                            if(budget == "") {
-                                $.post('CateNew', 
-                                {
-                                    "cateName": name,
-                                    "budget": 0
-                                }, postNewCate(budget, name));
-                                dialog.dialog( "close" );
-                            }else if( parseFloat(budget) >= 10 && parseFloat(budget) <= 40000 ) {
-                                $.post('CateNew', 
-                                {
-                                    "cateName": name,
-                                    "budget": budget
-                                }, postNewCate(budget, name));
-                                dialog.dialog( "close" );
+                            if(name == "") {
+                                alert("Please enter a valid category name!");
+                                $( "div.new-dialog #new-name" ).focus();
                             }else{
-                                alert("Please enter a valid budget or skip for now!");
-                                $( "div.new-dialog #new-name" ).val(name);
-                                $( "div.new-dialog #new-budget" ).val("");
-                                $( "div.new-dialog #new-budget" ).focus();
+                                if(budget == "") {
+                                    $.post('CateNew', 
+                                    {
+                                        "cateName": name,
+                                        "budget": 0
+                                    }, postNewCate(budget, name));
+                                    dialog.dialog( "close" );
+                                }else if( parseFloat(budget) >= 10 && parseFloat(budget) <= 40000 ) {
+                                    $.post('CateNew', 
+                                    {
+                                        "cateName": name,
+                                        "budget": budget
+                                    }, postNewCate(budget, name));
+                                    dialog.dialog( "close" );
+                                }else{
+                                    alert("Please enter a valid budget or skip for now!");
+                                    $( "div.new-dialog #new-name" ).val(name);
+                                    $( "div.new-dialog #new-budget" ).val("");
+                                    $( "div.new-dialog #new-budget" ).focus();
+                                }
                             }
                         }
                     },
@@ -99,6 +106,9 @@ function initBudgetEdit() {
         var dialog = $( "div.budget-dialog" ).dialog({
             autoOpen: false,
             modal: true,
+            hide: {effect: "bounce", times: 1, distance: 1},
+            show: {effect: "bounce", times: 1, distance: 1}
+            // {effect: "slide", direction: "right"}
         });
 
         $(".each-budget img").click(function() {

@@ -1,9 +1,9 @@
 .bg_img{
-    background-image: url(./pics/bg1.jpg);
+    background-image: url(./pics/home-screen-bulletins-BGIMG.jpg);
     background-repeat: repeat-y;
     /* Make the bg pic more transparent; texts more obvious */
-    /* background-color: rgba(255,255,255, 0.5);  */
-    /* background-blend-mode: lighten; */
+    background-color: rgba(255,255,255, 0.6); 
+    background-blend-mode: lighten;
     position: static;
     width: 100%;
     height: 760px;
@@ -84,7 +84,7 @@
     margin: 0px auto 5px; /* top, left/right, bottom */
 }
 
-img#pet_img, div.overlay {
+img#pet_img {
     display: block;
     margin: 0px auto 0px;
 }
@@ -123,6 +123,9 @@ div#countBurger {
 } */
 
 .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     top: -200px;
     bottom: -200px;
@@ -132,22 +135,26 @@ div#countBurger {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color:  #3caa40;
+    background-color: #ffcb91;  
+    /* #3caa40; */
 }
 
-.text {
-    color: white;
+.overlay .text {
+    color: black;
     font-size: 30px;
     font-family: monospace;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
+    position: static;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* top: 50%;
+    left: 50%; */
+    /* -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     text-align: center;
 }
 
-.container_img:hover .overlay {
+/* .container_img:hover .overlay {
     opacity: 0.75 !important;
-}
+} */

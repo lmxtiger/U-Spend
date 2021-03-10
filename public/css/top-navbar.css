@@ -6,6 +6,8 @@
 	width: 100%;
 	background-color: #ffcb91;
     z-index: 100;
+    opacity: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   
 .left,
@@ -67,6 +69,10 @@ p.center {
     font-family: inherit;
     margin-right: 15px;
     height: 100%;
+}
+
+#dropbtn img {
+    border-radius: 20px;    
 }
 
 .dropdown:hover #dropbtn, #dropbtn:focus {

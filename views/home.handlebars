@@ -6,6 +6,7 @@
 	<title>Main Navigation Page</title>
 	<meta charset="utf-8">
 	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="css/bootstrap.css" rel="stylesheet">
@@ -19,6 +20,7 @@
 
 	{{!-- enable JQuery --}}
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="/js/jquery.finger.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/home_action.js"></script>
 	<script>
@@ -53,6 +55,9 @@
 
 	{{!-- bg pic  --}}
 	<div class="bg_img">
+		<p style="font-size: 25px; margin-left: auto; margin-right: auto; padding-top: 10px; padding-bottom: 0px;">Welcome 
+			<strong style="color: orange;">{{fb_whole_name}}</strong>!
+		</p>
 		<p style="font-size: 18px; padding: 10px 15px 10px";> Track your everyday spending and win gifts! <p>
 
 		<script>
@@ -78,18 +83,20 @@
 		</fb:login-button> --}}
 
 		<div class="btn">
-			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new entry</button>
+			<button id="addNewEntry" onclick="location.href='./addNewEntry'">Add new expense</button>
 			<button id="overHist" onclick="location.href='./overHist'">Overview & History</button>
 			<button id="budget" onclick="location.href='./budget'">Budget</button>
-			<button id="help" onclick="location.href='./help'">Help</button>
+			{{!-- <button id="help" onclick="location.href='./help'">Help</button> --}}
 		</div>
-			
-		<p style="font-size: 20px; margin: 5px auto;">Welcome <strong>{{fb_whole_name}}</strong>!</p>
+
+		<p style="margin: 10px auto; font-size: 25px;">Feed 
+			<strong style="color: orange;">Foxy Doggy</strong>!
+		</p>
 
 		<div class="container_img">
-			<img src="css/pics/dog.gif" id="pet_img" alt="Pet Image" width="100%" height="200px" style="display: block;">
+			<img src="css/pics/happyDog.gif" id="pet_img" alt="Pet Image" width="100%" height="200px" style="display: block;">
 			<div class="overlay">
-				<div class="text">Click to feed me!</div>
+				<div class="text">Double tap!</div>
  			</div>
 		</div>
 		

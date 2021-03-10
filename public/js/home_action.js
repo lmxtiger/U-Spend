@@ -11,7 +11,14 @@ $(document).ready(function() {
  */
 function initializePage() {
     initFeedGesture();
+    showHintOnClick();
     // fakeFeed();
+}
+
+function showHintOnClick() {
+    $('div.overlay').on("click", function() {
+        $(this).css("opacity", 0.75);
+    })
 }
 
 function toggle_dropdown() {
@@ -33,13 +40,15 @@ function toggle_dropdown() {
 function initFeedGesture() {
     // Update database (feed.json data)
     $(function() {
-        $('div.overlay').bind('click', tapholdHandler);
 
-        function tapholdHandler(event) {
-           $.post("feed", {feed: 1}, updateCountUI);
+        $('div.overlay').bind('doubletap', gestureHandler);
+
+        function gestureHandler(event) {
+            event.preventDefault();
+            $.post("feed", {feed: 1}, updateCountUI);
 		};
             // $.getJSON('feed.json', function (data) {
-            //     console.log("tapholdHandler");
+            //     console.log("gestureHandler");
             //     data.burger_num = Math.max(data.burger_num - 1, 0);
             // })
 
@@ -62,6 +71,7 @@ function initFeedGesture() {
             alert(alertMSG);
             num = Math.max(--num, 0);
             $('#countBurger strong').html(": " + num);
+            $("div.overlay").css("opacity", 0);
         }
     });
 }

@@ -1,5 +1,9 @@
 .container {
-	background-image: url("./pics/bg1.jpg");
+	background-image: url("./pics/home-screen-bulletins-BGIMG.jpg");
+    background-repeat: repeat-y;
+    /* Make the bg pic more transparent; texts more obvious */
+    background-color: rgba(255,255,255, 0.6); 
+    background-blend-mode: lighten;
     margin-top: 59px;
     /* position: fixed;
     right: 0px;
@@ -91,11 +95,12 @@ img#question-mark {
     top: 0;
     bottom: 0;
     left: 0;
-    /* width: 50%; */
     background-color: red;
     opacity: 0.5;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
     /* z-index: -1; */
 }
 
@@ -133,7 +138,8 @@ div#piechart {
 }
 .each-item{
     display: block;
-    background-color: #f0f8ff;
+    background-color: rgba(240,248,255, 0.8);
+     /* #f0f8ff; */
     border: 2px solid;
     border-color: #66b8ff;
     border-radius: 10px;

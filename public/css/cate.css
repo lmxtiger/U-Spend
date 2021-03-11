@@ -14,7 +14,7 @@
   padding: 10px 5px;
 }
 
-.all-items div.each-item:not(:last-child) {
+.all-items div.each-item:not(:last-of-type) {
 	margin-bottom: 10px;
 }
 

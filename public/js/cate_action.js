@@ -3,7 +3,16 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
     toggle_dropdown();
+    showNoExpenseNote();
 });
+
+function showNoExpenseNote() {
+    if( $("div.each-item").length == 0 ) {
+        $("#no-expense").css("display", "block");
+    }else{
+        $("#no-expense").css("display", "none");
+    }
+}
 
 function toggle_dropdown() {
     // $( "#dropbtn" ).click(function() {

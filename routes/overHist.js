@@ -47,7 +47,9 @@ exports.overHistNew = function(req, res){
         expenses['categories'][cate[1]].spent = expenses['categories'][cate[1]].spent + parseFloat( req.body.amt_val );
     }
     expenses["history"].unshift(newEntry);
-    // Increment burger count on logging a new expense
-    home_data.burger_num++;
+    // Increment burger count on logging a new expense if budget not exceeded
+    if(expenses['categories'][cate[1]].budget == false || expenses['categories'][cate[1]].budget >= expenses['categories'][cate[1]].spent) {
+        home_data.burger_num++;
+    }
     res.send(newEntry);
 };

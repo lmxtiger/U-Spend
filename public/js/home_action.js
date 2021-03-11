@@ -16,9 +16,14 @@ function initializePage() {
 }
 
 function showHintOnClick() {
-    $('div.overlay').on("click", function() {
+    $(document).click(function() {
+        $("div.overlay").css("opacity", 0);
+    });
+
+    $('div.overlay').click(function(event) {
         $(this).css("opacity", 0.75);
-    })
+        event.stopPropagation();
+    });
 }
 
 function toggle_dropdown() {

@@ -128,9 +128,6 @@ function initEntryForm() {
                 return;
             }
             var cateSpent = data[cate_text].spent;
-            // console.log(typeof(cateBudget));
-            // console.log(typeof(cateSpent));
-            // console.log(typeof(amt_val));
             exceedBudget =  (cateSpent + parseFloat(amt_val) > cateBudget) ? true : false;
             console.log("exceedBudget: " + exceedBudget);
             return;

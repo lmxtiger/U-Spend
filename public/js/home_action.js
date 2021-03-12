@@ -12,6 +12,7 @@ $(document).ready(function() {
 function initializePage() {
     initFeedGesture();
     showHintOnClick();
+    showDogGif();
     // fakeFeed();
 }
 
@@ -42,6 +43,16 @@ function toggle_dropdown() {
     });
 }
 
+function showDogGif() {
+    var times_fed = $("div#times_fed").text();
+    times_fed = parseInt(times_fed);
+    if(times_fed >= 3) {
+        $("img#pet_img").attr("src", "/css/pics/happyDog.gif");
+    }else{
+        $("img#pet_img").attr("src", "/css/pics/dog.gif");
+    }
+}
+
 function initFeedGesture() {
     // Update database (feed.json data)
     $(function() {
@@ -50,7 +61,10 @@ function initFeedGesture() {
 
         function gestureHandler(event) {
             event.preventDefault();
-            $.post("feed", {feed: 1}, updateCountUI);
+            var str = $('#countBurger strong').html();
+            var num = parseInt(str.split(' ')[1]);
+            var no_burger_left = num > 0 ? false : true;
+            $.post("feed", {feed: 1, no_burger: no_burger_left}, updateCountUI);
 		};
             // $.getJSON('feed.json', function (data) {
             //     console.log("gestureHandler");
@@ -71,19 +85,31 @@ function initFeedGesture() {
         function updateCountUI(res) {
             var str = $('#countBurger strong').html();
             var num = parseInt(str.split(' ')[1]);
-            // console.log("num of burgers: " + num);
-            var alertMSG = num>0 ? "Feeded!" : "Oops! You have no burger left!";
-            alert(alertMSG);
-            num = Math.max(--num, 0);
-            $('#countBurger strong').html(": " + num);
-            $("div.overlay").css("opacity", 0);
-
             var times_fed = $("div#times_fed").text();
             times_fed = parseInt(times_fed);
-            $("div#times_fed").text(++times_fed);
-            if(times_fed >= 3) {
-                $("img#pet_img").attr("src", "/css/pics/happyDog.gif");
+            var alertMSG;
+            if(num > 0) {
+                alertMSG = "Feeded!";
+                $('#countBurger strong').html(": " + --num);
+                $("div#times_fed").text(++times_fed);
+                if(times_fed >= 3) {
+                    $("img#pet_img").attr("src", "/css/pics/happyDog.gif");
+                }
+            }else{
+                alertMSG = "Oops! You have no burger left!";
             }
+            // alertMSG = num>0 ? "Feeded!" : "Oops! You have no burger left!";
+            alert(alertMSG);
+            // num = Math.max(--num, 0);
+            // $('#countBurger strong').html(": " + num);
+            $("div.overlay").css("opacity", 0);
+
+            // var times_fed = $("div#times_fed").text();
+            // times_fed = parseInt(times_fed);
+            // $("div#times_fed").text(++times_fed);
+            // if(times_fed >= 3) {
+            //     $("img#pet_img").attr("src", "/css/pics/happyDog.gif");
+            // }
         }
     });
 }

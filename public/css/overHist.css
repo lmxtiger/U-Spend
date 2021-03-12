@@ -1,8 +1,8 @@
 .container {
 	background-image: url("./pics/home-screen-bulletins-BGIMG.jpg");
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     /* Make the bg pic more transparent; texts more obvious */
-    background-color: rgba(255,255,255, 0.6); 
+    background-color: rgba(255,255,255, 0.4); 
     background-blend-mode: lighten;
     margin-top: 59px;
     /* position: fixed;

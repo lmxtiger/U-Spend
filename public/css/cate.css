@@ -1,7 +1,19 @@
 .container {
-	background-image: url("./pics/bg1.jpg");
+	/* background-image: url("./pics/cate-BGIMGs/Default.png"); */
+	background-repeat: repeat;
+    /* background-color: rgba(255,255,255, 0.2); 
+    background-blend-mode: lighten; */
 	margin-top: 59px;
 	height: 760px;
+}
+
+div.budget-spent {
+	margin-top: 15px; 
+	border: 2px solid #66b8ff; 
+	border-radius: 5px; 
+	background-color: rgba(240,248,255, 0.9);
+	/* #f0f8ff; */
+	padding:5px 0px;
 }
 
 .all-items{
@@ -20,7 +32,8 @@
 
 .each-item{
 	display: inline-block;
-	background-color: #f0f8ff;
+	background-color: rgba(240,248,255, 0.9);
+	 /* #f0f8ff; */
 	border: 2px solid #66b8ff;
 	border-radius: 10px;
 	/* margin-bottom: 15px; */

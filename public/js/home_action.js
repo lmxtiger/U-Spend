@@ -77,6 +77,13 @@ function initFeedGesture() {
             num = Math.max(--num, 0);
             $('#countBurger strong').html(": " + num);
             $("div.overlay").css("opacity", 0);
+
+            var times_fed = $("div#times_fed").text();
+            times_fed = parseInt(times_fed);
+            $("div#times_fed").text(++times_fed);
+            if(times_fed >= 3) {
+                $("img#pet_img").attr("src", "/css/pics/happyDog.gif");
+            }
         }
     });
 }

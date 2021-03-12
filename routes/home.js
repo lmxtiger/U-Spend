@@ -12,6 +12,7 @@ exports.feed = function(req, res) {
 	if(feedSignal == 1) {
 		console.log(home_data.burger_num);
 		home_data.burger_num = Math.max(home_data.burger_num - 1, 0);
+		home_data.times_fed++;
 	}
 	res.send(feedSignal);
 }

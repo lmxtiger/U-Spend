@@ -2,7 +2,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initForm();
+	// initForm();
 })
 
 /*
@@ -13,6 +13,8 @@ function initForm() {
 	$.get("/accounts", function(data) {
 		accounts = data;
 	});
+	console.log("signup_action");
+	console.log(accounts);
 	// var usernames = [];
 	// $.get("/accounts", function(data) {
 	// 	data.forEach(account => usernames.push(account.username));

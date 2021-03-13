@@ -74,7 +74,7 @@
 
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-
+    <script src="/js/signup_action.js"></script>
 </head> 
 
 <body>    
@@ -82,7 +82,8 @@
         <h1>Sign Up</h1>
     </div>
 
-    <form action="./home">  
+    {{!-- action="./home" --}}
+    <form id="register">  
         <div class="container">   
             {{!-- <label>Email <span>*</span> </label>   
             <input type="email" placeholder="Enter Email" name="email" required>   --}}
@@ -96,7 +97,7 @@
             <input type="password" id="conf-pw" name="conf-pw" placeholder="Reenter Password" required>  
 
             <label>Pet Name (optional)</label>   
-            <input type="text" pattern="[A-Za-z]*" id="petName" name="petName" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" maxlength="12" required>  
+            <input type="text" pattern="[A-Za-z]*" id="petName" name="petName" placeholder="Only &quot;A-Z & a-z&quot;; max 12 characters" maxlength="12">  
 
             <button type="submit">Sign Up</button>   
             Already have an account? <a href="./">Login</a>

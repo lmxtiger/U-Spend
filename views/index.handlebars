@@ -73,6 +73,7 @@
 </style>   
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/index_action.js"></script>
     {{> facebook}}
     <script src="/js/facebook.js"></script>
 </head> 
@@ -82,23 +83,22 @@
         <h1>Login</h1>
     </div>
 
-    <form action="./home">  
+    {{!-- action="./home" --}}
+    <form id="login">  
         <div class="container">   
             <label>Username <span>*</span> </label>   
-            <input type="text" placeholder="Enter Username" name="username" required>  
+            <input type="text" placeholder="Enter Username" id="username" name="username" required>  
             <label>Password <span>*</span> </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
+            <input type="password" placeholder="Enter Password" id="password" name="password" required>  
 
-            <input type="checkbox"> Remember me  
-             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
-            style="display: inline-block; float:right;">
-            {{!-- window.location='./home' --}}
+            {{!-- <input type="checkbox"> Remember me   --}}
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
+            style="display: inline-block; float:left;">
             </fb:login-button>
+            <a href="./signup" style="float: right;">Sign up now!</a>
 
             <button type="submit">Login</button>   
-            <a href="#">Forgot password?</a>   
-            <a href="./signup" style="float: right;">Sign up now!</a>
-            {{!-- onclick="location.href='./' --}} 
+            {{!-- <a href="#">Forgot password?</a>    --}}
             <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   
     </form>    

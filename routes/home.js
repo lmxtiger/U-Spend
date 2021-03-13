@@ -1,4 +1,5 @@
 var home_data = require('../home-user.json');
+// var accounts = require('../accounts.json');
 
 /*
  * GET home page.
@@ -10,10 +11,7 @@ exports.view = function(req, res){
 exports.feed = function(req, res) {
 	var feedSignal = req.body.feed; // a String rather than an int
 	var no_burger = req.body.no_burger;
-	// no_burger = (no_burger === "true");
-	// console.log(typeof(feedSignal));
-	// console.log(typeof(no_burger));
-	// console.log(no_burger);
+
 	if(feedSignal == 1) {
 		// console.log(home_data.burger_num);
 		home_data.burger_num = Math.max(home_data.burger_num - 1, 0);

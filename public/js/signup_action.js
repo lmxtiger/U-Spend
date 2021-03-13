@@ -2,14 +2,48 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+	initForm();
 })
 
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
-    
+function initForm() {
+	var accounts;
+	$.get("/accounts", function(data) {
+		accounts = data;
+	});
+	// var usernames = [];
+	// $.get("/accounts", function(data) {
+	// 	data.forEach(account => usernames.push(account.username));
+	// });
+	// console.log(usernames);
+
+    $("#register").on("submit", function(e) {
+		e.preventDefault();
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var conf_pw = $("#conf-pw").val();
+		var petName = $("#petName").val();
+		petName = (petName === "") ? "Foxy Doggy" : petName;
+		if(password !== conf_pw) {
+			alert("Please confirm your password!");
+			$("#conf-pw").focus();
+		}else if(accounts.hasOwnProperty(username) ) {
+			alert("Username already in use!");
+			$("#username").focus();
+		}else{
+			var new_account = {
+				username: username,
+				password: password,
+				petName: petName
+			};
+			$.post("/newAccount", new_account, function() {
+				$(location).attr('href', "./home");
+				alert("Registration success!");
+			});
+		}
+	});
 }
 
 // function initFeedGesture() {

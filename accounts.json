@@ -1,0 +1,5 @@
+{
+    "accounts": {
+        "xyz": {"password": "123", "petName": "Foxy Doggy"}
+    }
+}

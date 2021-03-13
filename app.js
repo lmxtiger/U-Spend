@@ -47,22 +47,30 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.post('/loginAccount', index.loginAccount);
+
 app.get('/signup', signup.view);
+app.get('/accounts', signup.accounts);
+app.post('/newAccount', signup.newAccount);
+
 app.get('/home', home.view);
 app.post('/feed', home.feed);
 app.post('/login_profile', home.login_profile);
+
 app.get('/addNewEntry', addNewEntry.addNewEntry);
+
 app.get('/overHist', overHist.view);
 app.get('/overHistProgBar', overHist.overHistProgBar);
 app.post('/overHistNew', overHist.overHistNew);
+
 app.get('/budget', budget.view);
 app.post('/budgetNew', budget.budgetNew);
 app.post('/cateNew', budget.cateNew);
+
 app.get('/help', help.view);
 app.get('/profile', profile.view);
 app.get('/cate/:cateName', cate.viewEachCate);
-// Example route
-// app.get('/users', user.list);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

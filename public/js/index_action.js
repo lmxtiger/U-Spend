@@ -35,7 +35,10 @@ function initForm() {
             });
         }
     });
-    // $("#register").on("submit", function(e) {
+
+};
+
+  // $("#register").on("submit", function(e) {
 	// 	e.preventDefault();
 	// 	var username = $("#username").val();
 	// 	var password = $("#password").val();
@@ -58,5 +61,4 @@ function initForm() {
 	// 		});
 	// 	}
 	// });
-};
 

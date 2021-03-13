@@ -13,7 +13,7 @@ var handlebars = require('express3-handlebars')
 // handlebars.registerHelper('repeat', repeat);
 
 var index = require('./routes/index');
-var signup = require('./routes/signUp');
+var signup = require('./routes/signup');
 var home = require('./routes/home');
 var addNewEntry = require('./routes/addNewEntry');
 var overHist = require('./routes/overHist');

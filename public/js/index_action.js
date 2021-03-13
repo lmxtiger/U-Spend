@@ -30,9 +30,9 @@ function initForm() {
         }else{
             var login_account = {"username": username};
             $.post("/loginAccount", login_account, function() {
-                $(location).attr('href', "./home");
 				alert("Login success!");
             });
+			$(location).attr('href', "./home");
         }
     });
 

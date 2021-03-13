@@ -1,69 +1,81 @@
 <!DOCTYPE html>   
 <html>   
 <head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Sign Up Page </title>  
-<style>   
-    body {  
-        font-family: Calibri, Helvetica, sans-serif;  
-        background-image: url('/css/pics/home-screen-bulletins-BGIMG.jpg');
-        background-repeat: repeat;
-        /* Make the bg pic more transparent; texts more obvious */
-        background-color: rgba(255,255,255, 0.2); 
-        background-blend-mode: lighten;
-    }  
-    h1 {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    a {
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    .container span {
-        color: red;
-    }
-    form {   
-        border: 3px solid #f1f1f1;   
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }   
-    input[type=text], input[type=password], input[type=email] {   
-        width: 100%;   
-        margin: 8px 0 15px;  
-        padding: 12px 20px;   
-        display: inline-block;   
-        border: 2px solid green;   
-        box-sizing: border-box;   
-    }   
-    button {   
-        background-color: #4CAF50;   
-        width: 100%;  
-        color: black;   
-        padding: 15px;   
-        margin: 15px 0px;   
-        border: none;   
-        cursor: pointer;   
-        font-size: 16px;
-        font-family: Calibri, Helvetica, sans-serif;
-    }   
-    button:hover {   
-        opacity: 0.7;   
-    }  
-    .cancelbtn {   
-        width: auto;   
-        padding: 10px 18px;  
-        margin: 10px 0px;  
-    }   
-                    
-    .container {   
-        padding: 25px;   
-        background-color: rgb(173,216,230, 0.6);  
-    }  
-</style>
+    <title> Sign Up Page </title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link href="css/top-navbar.css" rel="stylesheet" type="text/css">
+    <style>   
+        body {  
+            margin: 0;
+            background-color: rgba(247, 237, 208, 0.75);
+            font-family: Calibri, Helvetica, sans-serif;  
+            {{!-- background-image: url('/css/pics/home-screen-bulletins-BGIMG.jpg');
+            background-repeat: repeat;
+            background-color: rgba(255,255,255, 0.2); 
+            background-blend-mode: lighten; --}}
+        }  
+        #signup {
+            margin: 0px auto 15px;
+            font-size: 25px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {   
+            margin: 70px 6px auto;
+            padding: 20px 25px;   
+            background-color: rgb(173,216,230, 0.6);  
+        }  
+        .container span {
+            color: red;
+        }
+        form {   
+            border: 3px solid #f1f1f1;   
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }   
+        input[type=text], input[type=password], input[type=email] {   
+            width: 100%;   
+            margin: 8px 0 15px;  
+            padding: 12px 20px;   
+            display: inline-block;   
+            border: 2px solid green;   
+            box-sizing: border-box;   
+        }   
+        button {   
+            background-color: #4CAF50;   
+            width: 100%;  
+            color: black;   
+            padding: 15px;   
+            margin: 15px 0px;   
+            border: none;   
+            cursor: pointer;   
+            font-size: 16px;
+            font-family: Calibri, Helvetica, sans-serif;
+        }   
+        button:hover {   
+            opacity: 0.7;   
+        }  
+        button:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .cancelbtn {   
+            display: block;
+            width: auto;   
+            padding: 10px 18px;  
+            margin: 10px 0px;  
+        }   
+
+        #app-title{
+            font-size: 35px;
+            text-align: center;
+        }
+    </style>
 
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -71,13 +83,32 @@
 </head> 
 
 <body>    
-    <div style="text-align: center;">
-        <h1>Sign Up</h1>
+    <div class="parent">
+		<div class="left">
+			{{!-- <img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to main page arrow"> --}}
+		</div>
+		<p class="center">U$pend</p>
+		<div class="right dropdown">
+			{{!-- <button id="dropbtn">
+				<img src="{{fb_profile_url}}" alt="profile pic" height="40px" width="40px">
+				<i class="fa fa-caret-down" style="display: inline-block;"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="./home">Home</a>
+				<a href="./profile">Profile</a>
+				<a href="./help">Help</a>
+				<a href="./">Logout</a>
+			</div> --}}
+		</div>
     </div>
-
+    
     {{!-- action="./home" --}}
     <form id="register">  
         <div class="container">   
+            <div id="signup" style="text-align: center;">
+                Sign Up
+            </div>
+
             {{!-- <label>Email <span>*</span> </label>   
             <input type="email" placeholder="Enter Email" name="email" required>   --}}
             <label for="username">Username <span>*</span> </label>   
@@ -95,15 +126,15 @@
             <button type="submit">Sign Up</button>   
             Already have an account? <a href="./">Login</a>
             {{!-- onclick="location.href='./' --}} 
-            <button type="button" class="cancelbtn" onclick="resetAll()">Cancel</button>   
+            <button type="reset" class="cancelbtn" onclick="resetAll()">Cancel</button>   
         </div>   
     </form>    
 
 	<script>
-		function resetAll() {
+        function resetAll() {
             $(" input[type=text], input[type=password] ").val("");
-		}
-	</script> 
+        }
+	</script>   
 
 </body>     
 </html>  

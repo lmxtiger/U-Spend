@@ -31,7 +31,7 @@ function changeUser(response) {
 }
 
 function postLogin() {
-	alert("postLogin");
+	alert("Facebook login success!");
 }
 
 // function changeUser(response) {

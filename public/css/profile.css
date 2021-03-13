@@ -1,9 +1,10 @@
 .container {
-	background-image: url("./pics/home-screen-bulletins-BGIMG.jpg");
+  background-color: rgba(247, 237, 208, 0.75);
+  /* #F7EDD0; */
+	/* background-image: url("./pics/home-screen-bulletins-BGIMG.jpg");
   background-repeat: repeat-y;
-  /* Make the bg pic more transparent; texts more obvious */
   background-color: rgba(255,255,255, 0.4); 
-  background-blend-mode: lighten;
+  background-blend-mode: lighten; */
 	margin-top: 59px;
 	height: 760px;
 }

@@ -3,7 +3,14 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initForm();
-})
+	// resetAll();
+});
+
+// function resetAll() {
+// 	$("button[type=button]").click(function(e) {
+// 		$(" input[type=text], input[type=password] ").val("");
+// 	});
+// };
 
 /*
  * Function that is called when the document is ready.
@@ -41,9 +48,9 @@ function initForm() {
 				petName: petName
 			};
 			$.post("/newAccount", new_account, function() {
-				$(location).attr('href', "./home");
-				alert("Registration success!");
+				alert("Sign up success!");
 			});
+			$(location).attr('href', "./home");
 		}
 	});
 }

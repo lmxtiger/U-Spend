@@ -19,6 +19,7 @@ exports.loginAccount = function(req, res) {
 	home_data.fb_whole_name = username;
 	home_data.fb_profile_url = "/css/pics/accountPic.png";
 
+	console.log("index loginAccount");
 	console.log(accounts.accounts);
 	res.send(username);
 };

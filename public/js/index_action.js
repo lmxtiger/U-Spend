@@ -11,9 +11,11 @@ $(document).ready(function() {
 function initForm() {
 	var accounts;
 	$.get("/accounts", function(data) {
+		console.log("index_action get");
 		accounts = data;
 	});
-    console.log("index_action: " + accounts);
+    console.log("index_action");
+	console.log(accounts);
 
     $("#login").on("submit", function(e) {
         e.preventDefault();

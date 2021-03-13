@@ -34,7 +34,7 @@ app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded( {extended: true} ) );
 app.use(express.methodOverride());
 app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());

@@ -14,7 +14,7 @@ function initForm() {
 		accounts = data;
 	});
 	console.log("signup_action");
-	console.log(accounts);
+	// console.log(accounts);
 	// var usernames = [];
 	// $.get("/accounts", function(data) {
 	// 	data.forEach(account => usernames.push(account.username));

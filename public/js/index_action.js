@@ -15,7 +15,7 @@ function initForm() {
 		accounts = data;
 	});
     console.log("index_action");
-	console.log(accounts);
+	// console.log(accounts);
 
     $("#login").on("submit", function(e) {
         e.preventDefault();
@@ -58,26 +58,5 @@ function initForm() {
 	// 		});
 	// 	}
 	// });
-}
-
-// function initFeedGesture() {
-
-//     $(function() {
-//         $('div.overlay').bind('click', tapholdHandler);
-
-//         function tapholdHandler(event) {
-//            $.post("feed", {feed: 1}, updateCountUI);
-// 		};
-
-//         function updateCountUI(res) {
-//             var str = $('strong').html();
-//             var num = parseInt(str.split(' ')[1]);
-
-//             var alertMSG = num>0 ? "Feeded!" : "Oops! You have no burger left!";
-//             alert(alertMSG);
-//             num = Math.max(--num, 0);
-//             $('strong').html(": " + num);
-//         }
-//     });
-// }
+};
 

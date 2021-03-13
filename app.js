@@ -50,8 +50,8 @@ app.get('/', index.view);
 app.post('/loginAccount', index.loginAccount);
 
 app.get('/signup', signup.view);
-app.get('/accounts', signup.accounts);
-app.post('/newAccount', signup.newAccount);
+// app.get('/accounts', signup.accounts);
+// app.post('/newAccount', signup.newAccount);
 
 app.get('/home', home.view);
 app.post('/feed', home.feed);

@@ -81,6 +81,13 @@
 
             {{!-- Rating  --}}
             <label for="rating">Rating</label>
+            <img id="question-mark" src="/css/pics/question-mark-icon.jpg"> 
+        </div>
+
+        <div id="dialog-rating" title="Rating?" 
+        style="width: 250px; height: auto;">
+            <p>How do you feel about this purchase? Give it 1 ~ 5 star(s)!
+            </p>
         </div>
 
         <div style="max-width: 900px;">
@@ -140,6 +147,12 @@
 
             <button class="addNewEntryBtn" style="float: left;" onclick="resetAll()">Reset</button>
             <button type="button" value="Add" class="addNewEntryBtn" style="float: right;">Add</button>
+            <style>
+                .container button {
+                    border: 2px solid #66b8ff;
+                    background-color: white;
+                }
+            </style>
 
             <div id="dialog" title="New Expense Added!">
                 <img src="/css/pics/burger.png" alt="Burger Image" height="40px" width="40px" style="display:inline-block; vertical-align:middle;"> 

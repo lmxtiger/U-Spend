@@ -5,7 +5,29 @@ $(document).ready(function() {
     $('select#categories').on('change', toggleNewCate);
     initEntryForm();
     toggle_dropdown();
+    displayQMDialog();
 });
+
+function displayQMDialog() {
+    $(function() {
+        var dialog = $("div#dialog-rating").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: [
+                {
+                    text: "Close",
+                    click: function() {
+                        dialog.dialog( "close" );
+                    }
+                }
+            ]
+        });
+
+        $("img#question-mark").click(function() {
+            dialog.dialog("open");
+        });
+    });
+};
 
 function toggle_dropdown() {
     // $( "#dropbtn" ).click(function() {

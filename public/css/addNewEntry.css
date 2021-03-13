@@ -16,7 +16,7 @@
     height: 60px;
     font-size: 25px;
     margin-bottom: 8%;
-	border: 2px solid green;
+	border: 2px solid #66b8ff;
     border-radius: 10px;
 }
 
@@ -52,7 +52,6 @@
 } */
 
 
-
 .addNewEntryBtn {
     width: 84px;
     height: 60px;
@@ -61,6 +60,14 @@
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
+}
+
+img#question-mark {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 /* Rating CSS */

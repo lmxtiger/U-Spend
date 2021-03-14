@@ -4,7 +4,7 @@
 $(document).ready(function() {
     toggle_dropdown();
     showNoExpenseNote();
-    setBGIMG();
+    // setBGIMG();
 });
 
 function setBGIMG() {

@@ -1,9 +1,9 @@
 .container {
-	background-image: url("./pics/cate-BGIMGs/Default.png");
-	background-repeat: repeat;
+	/* background-image: url("./pics/cate-BGIMGs/Default.png");
+	background-repeat: repeat; */
     background-color: rgba(247, 237, 208, 0.75);
 	/* rgba(248, 91, 91, 0.5);  */
-    background-blend-mode: lighten;
+    /* background-blend-mode: lighten; */
 	margin-top: 59px;
 	height: 760px;
 }

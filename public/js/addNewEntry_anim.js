@@ -8,43 +8,6 @@ $(document).ready(function() {
     displayQMDialog();
 });
 
-function displayQMDialog() {
-    $(function() {
-        var dialog = $("div#dialog-rating").dialog({
-            autoOpen: false,
-            modal: true,
-            buttons: [
-                {
-                    text: "Close",
-                    click: function() {
-                        dialog.dialog( "close" );
-                    }
-                }
-            ]
-        });
-
-        $("img#question-mark").click(function() {
-            dialog.dialog("open");
-        });
-    });
-};
-
-function toggle_dropdown() {
-    // $( "#dropbtn" ).click(function() {
-    //     console.log("Clicked");
-    //     $( "div.dropdown-content" ).slideToggle();
-    // });
-
-    $(window).click(function(e) {
-        var target = $(e.target);
-    	if (target.is("#dropbtn") || target.parent().is("#dropbtn") ) {
-            $( "div.dropdown-content" ).slideToggle();
-    	}else{
-            $( "div.dropdown-content" ).slideUp();
-        }   
-    });
-};
-
 function initEntryForm() {
     $(function() {
         var exceedBudget;
@@ -68,22 +31,28 @@ function initEntryForm() {
         $("button[value=Add]").click(function() {
 
             var name_val, selected_val, cate_text, amt_val, rating_val, date_val;
-    
-            selected_val = $( "select#categories option:selected" ).val();
-            if(selected_val == "-1") {
-                cate_text = $(".top_info").find("input#new_cate").val(); 
-                if(checkIsDuplicate(cate_text) ) {
-                    alert("Category \"" + cate_text + "\" already exists!");
-                    $(".top_info").find("input#new_cate").val("");
-                    $(".top_info").find("input#new_cate").focus();
-                    return false;
-                }
-            }else{
-                cate_text = $( "select#categories option:selected" ).text();
-            }
-    
+
             name_val = $("input#name").val();
             amt_val = $("input#amount").val();
+            rating_val = $( "input[name='rating']:checked" ).val();
+            selected_val = $( "select#categories option:selected" ).val();
+            if(selected_val == "-1") cate_text = $(".top_info").find("input#new_cate").val(); 
+            else cate_text = $( "select#categories option:selected" ).text();
+            // console.log(typeof(name_val) );
+            // console.log(typeof(amt_val) );
+            // console.log("rating: " + rating_val);
+
+            if(name_val == "" || amt_val == "" || rating_val === undefined|| (selected_val == "-1" && cate_text == "") ) {
+                alert("Please fill out all inputs!");
+                return;
+            }
+
+            if(selected_val == "-1" && checkIsDuplicate(cate_text) ) {
+                alert("Category \"" + cate_text + "\" already exists!");
+                $(".top_info").find("input#new_cate").val("");
+                $(".top_info").find("input#new_cate").focus();
+                return false;
+            }
 
             if(selected_val == "-1") exceedBudget = false;
             else $.get('./overHistProgBar', function(data) {
@@ -92,7 +61,6 @@ function initEntryForm() {
 
             var in_date = new Date();
             date_val = (in_date.getMonth()+1) + '/' + in_date.getDate() + '/' + in_date.getFullYear();
-            rating_val = $( "input[name='rating']:checked" ).val();
         
             dialog.dialog("option", {
                 "buttons": [
@@ -140,7 +108,6 @@ function initEntryForm() {
         function postSubmit(response, exceedBudget) {
             if(exceedBudget) dialog_warning.dialog("open");
             else dialog.dialog("open");
-            // alert("New spending logged! YOU GET ONE BURGER!");
         };
 
         function postGet(data, cate_text, amt_val) {
@@ -170,6 +137,27 @@ function initEntryForm() {
 
 }
 
+function displayQMDialog() {
+    $(function() {
+        var dialog = $("div#dialog-rating").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: [
+                {
+                    text: "Close",
+                    click: function() {
+                        dialog.dialog( "close" );
+                    }
+                }
+            ]
+        });
+
+        $("img#question-mark").click(function() {
+            dialog.dialog("open");
+        });
+    });
+};
+
 function toggleNewCate(e) {
     var selected_val = $( "select#categories option:selected" ).val();
     // console.log(selected_val);
@@ -197,3 +185,19 @@ function toggleNewCate(e) {
     }
     e.preventDefault();
 }
+
+function toggle_dropdown() {
+    // $( "#dropbtn" ).click(function() {
+    //     console.log("Clicked");
+    //     $( "div.dropdown-content" ).slideToggle();
+    // });
+
+    $(window).click(function(e) {
+        var target = $(e.target);
+    	if (target.is("#dropbtn") || target.parent().is("#dropbtn") ) {
+            $( "div.dropdown-content" ).slideToggle();
+    	}else{
+            $( "div.dropdown-content" ).slideUp();
+        }   
+    });
+};

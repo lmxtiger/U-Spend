@@ -63,7 +63,7 @@
             {{!-- Drop-down list of current categories --}}
             <label for="categories">Category</label>
             {{#with expenses}}
-            <select id="categories" name="category" form="newEntryForm">
+            <select id="categories" name="category" form="newEntryForm" style="background-color: white;">
                 <option value="-2" disabled>Select Category:</option>
                 {{#each categories}}
                     <option value="{{id}}">{{@key}}</option>
@@ -148,9 +148,9 @@
             <button class="addNewEntryBtn" style="float: left;" onclick="resetAll()">Reset</button>
             <button type="button" value="Add" class="addNewEntryBtn" style="float: right;">Add</button>
             <style>
-                .container button {
+                .container button, select, select option {
                     border: 2px solid #66b8ff;
-                    background-color: white;
+                    background-color: white !important;
                 }
             </style>
 

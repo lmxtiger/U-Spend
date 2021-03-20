@@ -130,8 +130,9 @@ div#piechart {
 
 .all-items{
     overflow: scroll;
-    margin-top: 15px;
-    height: fit-content;
+    margin: 15px auto 60px;
+    height: auto;
+    /* fit-content; */
     border: 2px solid #66b8ff;
     /* border-color: #ffcb91; */
     border-radius: 10px;

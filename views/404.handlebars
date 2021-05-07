@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Help Page</title>
+	<meta charset="utf-8">
+	{{!-- Necessary for a RESPONSIVE website; compatible with mobile broweser --}}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	{{!-- <link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet"> --}}
+
+	{{!-- My CSS  --}}
+	<link href="/css/top-navbar.css" rel="stylesheet" type="text/css">
+
+	{{!-- enable JQuery --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="left">
+            <img src="/css/pics/back-arrow.png" onclick="location.href='./home'" alt="back to main page arrow">
+        </div>
+        <p class="center">Help</p>
+        <div class="right dropdown">
+            <button id="dropbtn">
+                <img src="/css/pics/accountPic.png" height="40px" width="40px">
+                <i class="fa fa-caret-down" style="display: inline-block;"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="./home">Home</a>
+                {{!-- <hr> --}}
+                <a href="./profile">Profile</a>
+                {{!-- <hr> --}}
+                <a href="./help">Help</a>
+                {{!-- <hr> --}}
+                <a href="./">Logout</a>
+            </div>
+        </div>
+    </div>
+
+	<div class="container">
+		<h2 style="margin: 69px auto auto; display:block; text-align:center;">
+            Oops! You are in the middle of nowhere!
+        </h2>
+	</div>
+
+    <script>
+        $(window).click(function(e) {
+            var target = $(e.target);
+            if (target.is("#dropbtn") || target.parent().is("#dropbtn") ) {
+                $( "div.dropdown-content" ).slideToggle();
+            }else{
+                $( "div.dropdown-content" ).slideUp();
+            }   
+        });
+    </script>
+</body>
+
+</html>

@@ -29,8 +29,10 @@ var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
+
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
+
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -39,6 +41,7 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
+// Set the "public" folder to store static CSS files & pics
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -71,7 +74,12 @@ app.get('/help', help.view);
 app.get('/profile', profile.view);
 app.get('/cate/:cateName', cate.viewEachCate);
 
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+// Dealing with 404 
+app.use((req, res) => {
+  res.status(404).render('404');
 });
+
+http.createServer(app)
+    .listen(app.get('port'), function(){
+      console.log('Express server listening on port ' + app.get('port'));
+    });
